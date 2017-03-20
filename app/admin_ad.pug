@@ -70,16 +70,18 @@ block content
   h1.admin-a-title ADVERTISE
   
   // ---------- ADDS ROW ----------
-  .flex-grid.admin-a
-    - for(var i = 0; i < 7; i++)
-      +adPlaceholder
-        
-    .flex-col-1-12.a-col
-      .a-col-inner
-        +adLinks
-        a.a-box(href="#0")
-          img(src="http://pop.h-cdn.co/assets/15/49/320x320/square-1449266851-economy-cars.jpg", alt="alt", class="img-responsive")
-        +targetForm
+  .admin-a-wrap
+    .admin-a-inner
+      .flex-grid.admin-a
+        - for(var i = 0; i < 32; i++)
+          +adPlaceholder
+            
+        .flex-col-1-12.a-col
+          .a-col-inner
+            +adLinks
+            a.a-box(href="#0")
+              img(src="http://pop.h-cdn.co/assets/15/49/320x320/square-1449266851-economy-cars.jpg", alt="alt", class="img-responsive")
+            +targetForm
       a(href="#", class="add-a")
           span.add-a-inner
             i.fa.fa-plus

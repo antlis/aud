@@ -2,6 +2,8 @@
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "bower_components/font-awesome/scss/font-awesome.scss";
 @import "bower_components/animate-sass/_animate.scss";
+@import "bower_components/slick-carousel/slick/slick.scss";
+// @import "bower_components/slick-carousel/slick/slick-theme.scss";
 // endbower
 
 
@@ -13,10 +15,6 @@
 html {
     position: relative;
     z-index: -1;
-}
-
-.flex-grid.admin-a {
-    margin: 0 300px;
 }
 
 .admin-a-title {
@@ -36,16 +34,19 @@ html {
         .a-links-control, &:after {
             opacity: 1;
         }
-        .a-links-control :last-child {
-            margin-right: 0;
-        }
+    }   
+    .a-links-control :last-child {
+        margin-right: 0;
+    }
+    .a-col-inner.overlay:after {
+        opacity: 1;
     }
     .a-col-inner:after {
         content: " ";
         position: absolute;
         top: 0;
-        right: 5px;
-        bottom: 5px;
+        right: 7px;
+        bottom: 7px;
         left: 0;
         background: rgba(0,0,0,.5);
         z-index: 5;
@@ -53,9 +54,9 @@ html {
         transition: .5;
     }
     .a-col-inner:hover {
-        > .add-a-form.target-user-form {
-            display: block;
-        }
+        // > .add-a-form.target-user-form {
+        //     display: block;
+        // }
     }
     .add-a-form.target-user-form {
         left: -10px;
@@ -63,12 +64,26 @@ html {
     }
 }
 
+.a-col-inner.overlay {
+    .a-links-control {
+        opacity: 1;
+    }
+    .target-user-form {
+        display: block;
+        opacity: 1;
+    }
+}
+
+.a-col-inner:hover .a-links-control {
+    opacity: 1;
+}
+
 .a-links-control {
     position: absolute;
     top: 50%;
     margin-top: -8px;
     z-index: 6;
-    width: calc(100% - 5px);
+    width: calc(100% - 7px);
     text-align: center;
     opacity: 0;
     transition: .3s;
@@ -85,40 +100,47 @@ html {
      opacity: 1;  
 }
 
+.admin-a-wrap {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 500px;
+    &:before {
+        content: " ";
+        width: 300px;
+        height: 500px;
+        background: #fff;
+        position: absolute;
+        z-index: 3000;
+    }
+}
+
 .admin-a {
     // border-top: 1px solid #000;
     // border-bottom: 1px solid #000;
-    border: 1px solid #000;
     justify-content: flex-start;
-    margin-bottom: 320px;
-    padding-top: 5px;
-    padding-left: 5px;
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
     // padding-right: 5px;
+    margin-bottom: 0;
+    position: relative;
+    &:after {
+        content: " ";
+        background: #fff;
+        height: 500px;
+        width: 300px;
+        right: -301px;
+        top: 0;
+        position: absolute;
+    }
     .flex-col-1-12 {
         width: auto;
         display: flex;
         max-width: 450px;
-        padding-right: 5px;
+        padding-right: 7px;
         // width: 14.2857142857143%;
         width: 12.5%;
-        padding-bottom: 5px;
-        &:last-child {
-            position: relative;
-            .add-a {
-                position: absolute;
-                height: 24px;
-                top: 50%;
-                margin-top: -12px;
-                cursor: pointer;
-                width: 23px;
-                border: 2px solid #000;
-                right: -30px;
-                text-align: center;
-                border-radius: 50%;
-                line-height: 22px;
-                color: #000;
-            }
-        }
+        padding-bottom: 7px;
     }
     .img-responsive {
         max-height: 150px;
@@ -208,8 +230,8 @@ html {
         }
     }
     &.target-user-form {
+        opacity: 0;
         display: none;
-        // display: block;
         button[type="submit"] {
             margin-left: 0;
             margin-right: 0;
@@ -415,6 +437,7 @@ p.close-container {
     &.add-a-form:after {
         z-index: 9;
     }
+    display: none;
 }
 
 .top-checkbox-area, .checkbox-row {
@@ -586,6 +609,47 @@ p.close-container {
     }
 }
 
+.admin-a-inner {
+    position: relative;
+    border: 1px solid #000;
+    margin: 0 300px;
+}
+
+.add-a {
+    position: absolute;
+    height: 24px;
+    top: 50%;
+    margin-top: -12px;
+    cursor: pointer;
+    width: 23px;
+    border: 2px solid #777;
+    // right: -30px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 22px;
+    color: #000;
+    right: -30px;
+    color: #777;
+    transition: .3s;
+    &:focus, &:hover {
+        color: #000;
+        border-color: #000;
+    }
+}
+
 .flex-col-4 {
     width: 33.3333333333333%;
 }
+
+.slick-dots li {
+    background: black;
+    border-radius: 50%;
+    &.slick-active {
+        background: green;
+    }
+}
+
+.slick-list {
+    overflow: visible;
+}
+
