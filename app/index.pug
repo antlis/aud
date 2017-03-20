@@ -1,0 +1,129 @@
+extends layouts/default
+
+mixin mContent
+  .item
+      a(href='#')
+        img(src='http://goo.gl/NiXtS3', alt='')
+  .item
+      a(href='#')
+        img(src='http://goo.gl/bybkCD', alt='')
+  .item
+      a(href='#')
+        img(src='https://images.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F3IkFNVYUEUQ%2Fhqdefault.jpg&f=1', alt='')
+  .item
+      a(href='#')
+        img(src='http://goo.gl/Akx3Oh', alt='')
+  .item
+      a(href='#')
+        img(src='http://goo.gl/oyBrGp', alt='')
+  .item
+      a(href='#')
+        img(src='http://goo.gl/iUOjWW', alt='')
+  .item
+      a(href='#')
+        img(src='http://goo.gl/H9xGFt', alt='')
+
+block content
+    .container
+      .youtube.hidden(style='margin: 0 auto; text-align: center;')
+        button.youtube-close.fa.fa-close
+        iframe(width='720px', height='405px', src='https://www.youtube.com/embed/bM7SZ5SBzyY', frameborder='0', allowfullscreen='')
+      #search-panel
+        form#search-form.main-header-inner(action='')
+          .flex-col-4
+            button#search-abort(type='')
+              i.fa.fa-close
+          .flex-col-4
+            input#search-field.search-field(type='text', placeholder='Search for images to add to your vision board')
+          .flex-col-4.flex-end
+            button#search-done(type='submit')
+              i.fa.fa-long-arrow-right
+              |  All Done
+      header.main-header.top_panel
+        .main-header-inner
+          .flex-col-4
+            a.logo(href='#0') mindcastr
+          .flex-col-4.main-header-nav
+            a.top_upload.top-icon(href='#')
+              i.fa.fa-cloud-upload
+            a#search-caller.top_search.top-icon(href='#')
+              i.fa.fa-search
+          .flex-col-4.main-header-info
+            a.top_tutor.tutor-question(href='#0')
+              i.fa.fa-question-circle-o
+      
+      // #list
+      //   span Item 1
+      //   span Item 2
+      //   span Item 3
+      //   span Item 4
+      //   span Item 5
+      //   span Item 6
+      //   span Item 7
+      //   span Item 8
+      //   span Item 9
+      //   span Item 10
+      #scroll.grid-wrap
+        .grid-inner
+          #grid.grid.effect-2
+              .rows-wrap
+                - for(var i = 0; i < 10; i++)
+                  .grid-row(class="grid-row-" + i)
+                    +mContent
+
+      main.main-content
+        .flex-grid
+          .flex-col-3
+            img.img-responsive.banner-border(src='./images/placeholder.png', alt='alt')
+          .flex-col-3
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+          .facebook-login.flex-col-6.align-center
+            h3.google-results-title facebook
+            |  
+            a.facebook-login-trigger.open-frame-link(href='http://www.facebok.com') Login into your facebook.
+            |  
+            a.side-link(href='#0') &nbsp;
+        .flex-grid
+          .flex-col-3
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+          .flex-col-3
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+          .google-results.flex-col-6.align-center
+            h3.google-results-title Google
+            form.google-search-from
+              input.google-result-input(type='text', name='googleResult')
+              |  
+              button.google-search-submit.open-frame-link(type='submit') Search
+            |  
+            a.side-link(href='#0') &nbsp;
+        .flex-grid
+          .flex-col-3.xs-bottom-margin
+            img.img-responsive.banner-border(src='./images/placeholder.png', alt='alt')
+          .flex-col-3.xs-bottom-margin
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+          .flex-col-3
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+          .flex-col-3
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+        .flex-grid
+          .flex-col-3.xs-bottom-margin
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+          .flex-col-3.xs-bottom-margin
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+          .flex-col-3
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+          .flex-col-3
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+        .flex-grid
+          .flex-col-3.xs-bottom-margin
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+          .flex-col-3.xs-bottom-margin
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+          .flex-col-3
+            img.img-responsive(src='./images/placeholder.png', alt='alt')
+          .flex-col-3
+            img.img-responsive.banner-border(src='./images/placeholder.png', alt='alt')
+      footer.main-footer
+        button.load-more-feed(type='button') load more
+      .google.hidden
+        iframe(width='100%', height='100%', src='google-frame.html', frameborder='0')

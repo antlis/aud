@@ -1,0 +1,153 @@
+mixin successItem(dayNum, img)
+    .flex-col-1-7.item
+      if(img)
+        img.img-responsive(src= img, alt="alt")
+      else
+        span.day-number= dayNum
+
+- var carPlaceholder = 'http://pop.h-cdn.co/assets/15/49/320x320/square-1449266851-economy-cars.jpg'
+
+mixin memeberItem
+    .member-item
+        .member-item-checkbox
+            input(type="checkbox")
+        ul
+            li Name Surname
+            li 
+                b Members@email.com
+            li Female
+            li
+                b Weightloss / Love
+
+doctype html
+html.no-js(lang='')
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title workspace
+    link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    link(rel='stylesheet', href='styles/main.css')
+    link(rel='stylesheet', href='styles/admin.css')
+    link(rel='stylesheet', href='https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css', integrity='sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU', crossorigin='anonymous')
+    script(src='/bower_components/modernizr/modernizr.js')
+  body
+    
+    .container
+        
+        // ---------- HEADER ---------- 
+        .admin-success-nav-wrap
+            .admin-success-nav
+                a(href="#0") Members
+                a(href="#0") ad
+                a(href="#0") Success Feed
+        // ---------- HEADER ----------
+        
+        .admin-members
+            
+            // ---------- SEARCH ---------- 
+            form.admin-members-search(method="get", action="")
+                input(type="text", placeholder="Search for users Name/Email....", method="get")
+                button(type="submit") Search
+            // ---------- SEARCH ---------- 
+            
+            // ---------- DROPDOWNS ---------- 
+            .members-dropdowns
+                .flex-grid
+                    .flex-col-4
+                        .dropdown
+                            button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+                                | Gender
+                                span.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href='#') All
+                                li
+                                    a(href='#') Male
+                                li
+                                    a(href='#') Female
+
+                    .flex-col-4
+                        .dropdown
+                            button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+                                | Desires
+                                span.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href='#') All
+                                li
+                                    a(href='#') Love
+                                li
+                                    a(href='#') Wealth
+
+                    .flex-col-4
+                        .dropdown
+                            button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+                                | All users
+                                span.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href='#') All users
+                                li
+                                    a(href='#') Customers
+                                li
+                                    a(href='#') Non Customers
+            // ---------- DROPDOWNS ----------
+            
+            // ---------- SELECTS ---------- 
+            .members-select
+                form.flex-grid
+                    .flex-col-4
+                        select#gender
+                            option(value='volvo', disabled='disabled', selected='selected') Gender
+                            option(value='saab') All
+                            option(value='vw') Male
+                            option(value='audi') Female
+                    .flex-col-4
+                        select#desires
+                            option(value='volvo', disabled='disabled', selected='selected') Desires
+                            option(value='saab') All
+                            option(value='vw') Love
+                            option(value='audi') Wealth
+                    .flex-col-4
+                        select#desires
+                            option(value='volvo', disabled='disabled', selected='selected') All users
+                            option(value='saab') All users
+                            option(value='vw') Customers
+                            option(value='audi') Non Customers
+            // ---------- SELECTS ---------- 
+                                        
+            .members-content
+                // ---------- MEMBERS HEADING ----------
+                .members-heading
+                    .flex-grid
+                        .flex-col-3
+                            a(href="#")
+                                | Get CSV
+                        .flex-col-3.text-center
+                            a(href="#")
+                                | (1) Members
+                        .flex-col-3.text-right
+                            a(href="#")
+                                | ADD+
+                // ---------- MEMBERS HEADING ----------
+                // ---------- MEMBERS LIST ----------
+                .members-list
+                    +memeberItem
+                    +memeberItem
+                    +memeberItem
+                    +memeberItem
+                // ---------- MEMBERS LIST ----------
+                
+                // ---------- MEMBERS MORE BUTTON ----------
+                .members-load-more
+                    button.members-load-more-btn(type="button") load more
+                // ---------- MEMBERS MORE BUTTON ----------
+                
+
+    // build:js scripts/plugins.js
+    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js')
+    // endbuild
+    
+    script(src='scripts/admin.js')

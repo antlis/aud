@@ -1,0 +1,114 @@
+mixin targetForm
+  form.add-a-form.target-user-form(action='', method='post')
+    .add-a-form-inner
+      h3 Target Specific Users.
+      .add-a-form-body
+        .top-checkbox-area
+          label.checkbox-inline
+            input#add-a-noncustmer(type='checkbox', name='add-a-noncustomr', placeholder='edit link')
+            | Non-Customers
+          label.checkbox-inline
+            input#customer(type="checkbox", name="add-a-customer", placeholder="upload file")
+            | Customers.
+        .checkbox-row
+          b Gender
+          label.checkbox-inline
+            input#customer(type="checkbox", name="add-a-gender-male", placeholder="upload file")
+            | Female.
+          label.checkbox-inline
+            input#customer(type="checkbox", name="add-a-gender-female", placeholder="upload file")
+            | Male.
+        .checkbox-row
+          b Desiers
+          label.checkbox-inline
+            input#customer(type="checkbox", name="add-a-customer", placeholder="upload file")
+            | Weightloss.
+          label.checkbox-inline
+            input#customer(type="checkbox", name="add-a-customer", placeholder="upload file")
+            | Wealth.
+        .checkbox-row
+          label.checkbox-inline
+            input#customer(type="checkbox", name="add-a-customer", placeholder="upload file")
+            | Love.
+          label.checkbox-inline
+            input#customer(type="checkbox", name="add-a-customer", placeholder="upload file")
+            | Law of attration.
+          a.target-form-add-circle(href="#0")
+            i.fa.fa-plus
+      button(type="submit") All done
+
+mixin successItem(dayNum, img)
+    .flex-col-1-12.item
+      if(img)
+        img.img-responsive(src= img, alt="alt")
+      else
+        span.day-number= dayNum
+        
+mixin adLinks
+  .a-links-control
+    a.target-users(href="#0")
+      i.fa.fa-pencil-square-o
+    a(href="#0")
+      i.fa.fa-link
+    a(href="#0")
+      i.fa.fa-camera
+    a(href="#0")
+      i.fa.fa-trash
+      
+mixin adPlaceholder
+  .flex-col-1-12.a-col
+    .a-col-inner
+      +adLinks
+      a.a-box(href="#0")
+        img(src="http://pop.h-cdn.co/assets/15/49/320x320/square-1449266851-economy-cars.jpg", alt="alt", class="img-responsive")
+      +targetForm 
+
+- var carPlaceholder = 'http://pop.h-cdn.co/assets/15/49/320x320/square-1449266851-economy-cars.jpg'
+
+doctype html
+html.no-js(lang='')
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title workspace
+    link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    link(rel='stylesheet', href='styles/main.css')
+    link(rel='stylesheet', href='styles/admin.css')
+    link(rel='stylesheet', href='https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css', integrity='sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU', crossorigin='anonymous')
+    script(src='/bower_components/modernizr/modernizr.js')
+  body
+    <!--[if lt IE 10]>
+      p.browserupgrade You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+    <![endif]-->
+    //- .container
+    .admin-success-nav-wrap
+        .admin-success-nav
+            a(href="#0") Members
+            a(href="#0") ad
+            a(href="#0") Success Feed 
+    h1.admin-a-title ADVERTISE
+    
+    .flex-grid.admin-a
+        - for(var i = 0; i < 7; i++)
+          +adPlaceholder
+          
+        .flex-col-1-12.a-col
+          .a-col-inner
+            +adLinks
+            a.a-box(href="#0")
+              img(src="http://pop.h-cdn.co/assets/15/49/320x320/square-1449266851-economy-cars.jpg", alt="alt", class="img-responsive")
+            +targetForm
+          a(href="#", class="add-a")
+              span.add-a-inner
+                i.fa.fa-plus
+                form.add-a-form.upload-a(action='', method='post')
+                  .add-a-form-inner
+                    h3 Upload Ad
+                    .add-a-form-body
+                      input(type='text', name='add-a-edit-link', placeholder='edit link')
+                      input(type="file", name="add-a-upload", placeholder="upload file")
+                    button(type="submit") All done
+        
+    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src='scripts/admin.js')
