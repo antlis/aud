@@ -125,5 +125,10 @@ block content
             img.img-responsive.banner-border(src='./images/placeholder.png', alt='alt')
       footer.main-footer
         button.load-more-feed(type='button') load more
-      .google.hidden
-        iframe(width='100%', height='100%', src='google-frame.html', frameborder='0')
+      .google
+        iframe#google-frame(width='100%', height='100%', src='google-frame.html', frameborder='0')
+        button.google-close(type="button") X
+        a.google-home(href="#0")
+          i.fa.fa-arrow-right
+          | Back to Home
+

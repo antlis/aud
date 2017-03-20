@@ -1,56 +1,31 @@
-mixin successItem(dayNum, img)
-    - var klass = (img ? 'filled' : 'empty')
-    .flex-col-1-7.item.success-item(class= klass, data-num= dayNum)
-      a(href="#")
-        if(img)
-          img.img-responsive(src= img, alt="alt")
-        else
-          span.day-number= dayNum
-      if img
-        .success-details
-          .success-details-inner
-            p.close-container
-              a.close-details(href="#0")
-                i.fa.fa-close
-            img(src= img, alt='alt')
-            .success-desc
-              // a.target-users(href="#0")
-              //   i.fa.fa-pencil-square-o
-              a(href="#0")
-                i.fa.fa-link
-              a(href="#0")
-                i.fa.fa-camera
-              a(href="#0")
-                i.fa.fa-trash
+extends layouts/admin
+block content
+    mixin successItem(dayNum, img)
+        - var klass = (img ? 'filled' : 'empty')
+        .flex-col-1-7.item.success-item(class= klass, data-num= dayNum)
+          a(href="#")
+            if(img)
+              img.img-responsive(src= img, alt="alt")
+            else
+              span.day-number= dayNum
+          if img
+            .success-details
+              .success-details-inner
+                p.close-container
+                  a.close-details(href="#0")
+                    i.fa.fa-close
+                img(src= img, alt='alt')
+                .success-desc
+                  // a.target-users(href="#0")
+                  //   i.fa.fa-pencil-square-o
+                  a(href="#0")
+                    i.fa.fa-link
+                  a(href="#0")
+                    i.fa.fa-camera
+                  a(href="#0")
+                    i.fa.fa-trash
 
-
-doctype html
-html.no-js(lang='')
-  head
-    meta(charset='utf-8')
-    meta(name='description', content='')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    title workspace
-    link(rel='apple-touch-icon', href='apple-touch-icon.png')
-    link(rel='stylesheet', href='styles/main.css')
-    link(rel='stylesheet', href='styles/admin.css')
-    link(rel='stylesheet', href='https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css', integrity='sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU', crossorigin='anonymous')
-    script(src='/bower_components/modernizr/modernizr.js')
-    script(src='http://code.jquery.com/jquery-3.2.0.min.js', integrity='sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=', crossorigin='anonymous')
-  body
-    //if lt IE 10
-      p.browserupgrade
-        | You are using an 
-        strong outdated
-        |  browser. Please 
-        a(href='http://browsehappy.com/') upgrade your browser
-        |  to improve your experience.
     .container
-      .admin-success-nav-wrap
-          .admin-success-nav
-            a(href="#0") Members
-            a(href="#0") ad
-            a(href="#0") Success Feed            
       .flex-grid.admin-success
         - for(var i = 0; i <= 33; i++)
           if i == 0 || i == 8 || i == 14 || i == 15 || i == 16 || i == 17 || i == 18 || i == 19 || i == 20 || i == 30
@@ -59,6 +34,3 @@ html.no-js(lang='')
             +successItem(i)
         .flex-col-1-7.item.more-days.success-item
             span Show more days
-    // script(src='/bower_components/jquery/dist/jquery.js')
-    // script(src='/bower_components/masonry/dist/masonry.pkgd.min.js')
-    script(src='scripts/admin.js')

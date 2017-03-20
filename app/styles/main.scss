@@ -570,3 +570,11 @@ div#scroll {
 .item:last-child {
     margin-bottom: 0px;
 }
+
+.google {
+  display: none;
+  .google-close, .google-home {
+    position: absolute;
+    top: 1px;
+  }
+}

@@ -1,48 +1,27 @@
-mixin successItem(dayNum, img)
-    .flex-col-1-7.item
-      if(img)
-        img.img-responsive(src= img, alt="alt")
-      else
-        span.day-number= dayNum
-
-- var carPlaceholder = 'http://pop.h-cdn.co/assets/15/49/320x320/square-1449266851-economy-cars.jpg'
-
-mixin memeberItem
-    .member-item
-        .member-item-checkbox
-            input(type="checkbox")
-        ul
-            li Name Surname
-            li 
-                b Members@email.com
-            li Female
-            li
-                b Weightloss / Love
-
-doctype html
-html.no-js(lang='')
-  head
-    meta(charset='utf-8')
-    meta(name='description', content='')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    title workspace
-    link(rel='apple-touch-icon', href='apple-touch-icon.png')
-    link(rel='stylesheet', href='styles/main.css')
-    link(rel='stylesheet', href='styles/admin.css')
-    link(rel='stylesheet', href='https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css', integrity='sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU', crossorigin='anonymous')
-    script(src='/bower_components/modernizr/modernizr.js')
-  body
+extends layouts/admin
+block content
+    mixin successItem(dayNum, img)
+        .flex-col-1-7.item
+          if(img)
+            img.img-responsive(src= img, alt="alt")
+          else
+            span.day-number= dayNum
+    
+    - var carPlaceholder = 'http://pop.h-cdn.co/assets/15/49/320x320/square-1449266851-economy-cars.jpg'
+    
+    mixin memeberItem
+        .member-item
+            .member-item-checkbox
+                input(type="checkbox")
+            ul
+                li Name Surname
+                li 
+                    b Members@email.com
+                li Female
+                li
+                    b Weightloss / Love
     
     .container
-        
-        // ---------- HEADER ---------- 
-        .admin-success-nav-wrap
-            .admin-success-nav
-                a(href="#0") Members
-                a(href="#0") ad
-                a(href="#0") Success Feed
-        // ---------- HEADER ----------
-        
         .admin-members
             
             // ---------- SEARCH ---------- 
@@ -143,11 +122,3 @@ html.no-js(lang='')
                 .members-load-more
                     button.members-load-more-btn(type="button") load more
                 // ---------- MEMBERS MORE BUTTON ----------
-                
-
-    // build:js scripts/plugins.js
-    script(src='/bower_components/jquery/dist/jquery.js')
-    script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js')
-    // endbuild
-    
-    script(src='scripts/admin.js')

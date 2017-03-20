@@ -134,7 +134,13 @@ $(function() {
 // Google search submit
 $('.google-search-from').on('click', function(e) {
     e.preventDefault();
-    $('.google').removeClass('hidden');
+    $('.google').fadeIn();
+    $('.google-close').on('click', function(e) {
+        $('.google').fadeOut();
+    });
+    $('.google-home').on('click', function(e) {
+       $('.google').fadeOut(); 
+    });
 });
 
 // $(document).ready(function(e) {

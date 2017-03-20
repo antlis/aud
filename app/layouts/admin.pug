@@ -32,6 +32,14 @@ html.no-js(lang='')
       p.browserupgrade You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
     <![endif]-->
 
+    // ---------- HEADER ---------- 
+    .admin-success-nav-wrap
+      .admin-success-nav
+          a(href="#0") Members
+          a(href="#0") ad
+          a(href="#0") Success Feed
+    // ---------- HEADER ---------- 
+    
     block content
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
@@ -46,26 +54,14 @@ html.no-js(lang='')
     // build:js scripts/vendor.js
     // bower:js
     script(src='/bower_components/jquery/dist/jquery.js')
-    script(src='/bower_components/masonry/dist/masonry.pkgd.min.js')
-    // script(src='/bower_components/slick/dist/slick.min.js')
+    script(src='/bower_components/slick/dist/slick.min.js')
     // endbower
     // endbuild
 
     // build:js scripts/plugins.js
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js')
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js')
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js')
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js')
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js')
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js')
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js')
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js')
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js')
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js')
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js')
-    // script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js')
+    script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js')
     // endbuild
 
-    // build:js scripts/main.js
+    // build:js scripts/admin.js
     script(src='scripts/admin.js')
     // endbuild
