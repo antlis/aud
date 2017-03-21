@@ -1,5 +1,7 @@
 // Admin
 (function() {
+    $('.dropdown-toggle').dropdown();
+    
     $('.admin-a').slick({
       dots: false,
       arrows: false,
@@ -44,6 +46,8 @@
     $('.target-users').on('click', function(e) {
         e.stopPropagation();
         e.preventDefault();
+        $('.target-user-form.visible').parent().removeClass('overlay');
+        $('.target-user-form.visible').removeClass('visible');
                 
         $(this).parent().parent().find('.target-user-form').addClass('visible');
         $(this).parent().parent().addClass('overlay');

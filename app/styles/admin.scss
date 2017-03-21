@@ -60,7 +60,7 @@ html {
     }
     .add-a-form.target-user-form {
         left: -10px;
-        top: 100px;
+        top: 150px;
     }
 }
 
@@ -107,7 +107,7 @@ html {
     &:before {
         content: " ";
         width: 300px;
-        height: 500px;
+        height: 131px;
         background: #fff;
         position: absolute;
         z-index: 3000;
@@ -127,7 +127,7 @@ html {
     &:after {
         content: " ";
         background: #fff;
-        height: 500px;
+        height: 131px;
         width: 300px;
         right: -301px;
         top: 0;
@@ -492,6 +492,7 @@ p.close-container {
             width: 100%;
             border: none;
             text-align: center;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
             a {
                 color: #8995b5;
                 padding: 10px 0;
@@ -519,11 +520,8 @@ p.close-container {
             width: 100%;
             padding: 10px 50px 10px 10px;
             border: 1px solid #d7e1f5;
-            box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
+            box-shadow: 0 -3px 3px 0 rgba(0,0,0,.1);
             margin-bottom: 30px;
-        }
-        .open > .btn-default.dropdown-toggle {
-            background: none;
         }
         button {
             border: 1px solid #22a0f5;
@@ -607,6 +605,18 @@ p.close-container {
             }
         }
     }
+}
+
+.open > .btn-default.dropdown-toggle {
+    background: transparent !important;
+}
+
+.dropdown.open > .btn-default.dropdown-toggle {
+}
+
+.open .dropdown-menu {
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .admin-a-inner {

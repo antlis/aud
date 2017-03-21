@@ -7,6 +7,7 @@ $icon-font-path: '../fonts/';
 // endbower
 
 @import "./old_styles";
+@import "./login";
 // @import "admin";
 
 @font-face {
@@ -59,6 +60,9 @@ $icon-font-path: '../fonts/';
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  &.squarespace {
+    border-top: none;
+  }
 }
 
 .container-narrow > hr {
@@ -577,4 +581,18 @@ div#scroll {
     position: absolute;
     top: 1px;
   }
+}
+
+
+// .facebook-chat-frame {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   left: 0;
+//   bottom: 0;
+//   background: black;
+// }
+
+a.exit {
+  border: none;
 }
