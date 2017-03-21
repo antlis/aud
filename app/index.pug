@@ -130,10 +130,20 @@ block content
       //   .facebook-chat-frame-inner
       //     iframe(src='https://uberch.at?href=http://wordp-xzarxzes.c9users.io:8080/', frameborder='no', width='400', height='600')
       
+      .trending
+        .trending-inner
+          a(href="#")
+            img(src="./images/cat_banner.gif", alt="")
+          .trending-slide
+            a(href="#")
+              img(src="./images/trend.png", alt="trend")
+      
       .google
         iframe#google-frame(width='100%', height='100%', src='google-frame.html', frameborder='0')
-        button.google-close(type="button") X
+        .google-close-wrap
+          button.google-close(type="button")
+            i.fa.fa-close
         a.google-home(href="#0")
-          i.fa.fa-arrow-right
-          | Back to Home
+          i.fa.fa-arrow-left
+          | &nbsp; Back to Home
 

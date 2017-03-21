@@ -132,8 +132,25 @@ $(function() {
 });
 
 // Google search submit
+
+$('.trending').hover(function() {
+    $(this).css('left', '0');
+}, function() {
+    $(this).css('left', '-268px');
+});
+
+var trending = function(e) {
+    var $trend = $('.trending');
+    
+    $trend.css('left', '0');
+    setTimeout(function() {
+        $trend.css('left', '-268px');
+    }, 3000);
+}
+
 $('.google-search-from').on('click', function(e) {
     e.preventDefault();
+    trending();
     $('.google').fadeIn();
     $('.google-close').on('click', function(e) {
         $('.google').fadeOut();
