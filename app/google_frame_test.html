@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <style>
+    .gsc-input-box {
+        height: 39px;
+        line-height: 34px;
+    }
+    .gsib_b {
+        line-height: 39px;
+    }
+    .gsc-search-button.gsc-search-button-v2 {
+        position: relative;
+        left: -90px;
+        top: 1px;
+        background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+        background-image: linear-gradient(top, #f5f5f5, #f1f1f1);
+    }
+    .gsc-i-id1 {
+        background-image: none !important;
+    }
+    
+    .gsearch {
+        color: blue;
+    }
+    
+</style>
+</head>
+<body>
+<div id="test"></div>
+
+<script>
+var myCallback = function() {
+  if (document.readyState == 'complete') {
+    // Document is ready when CSE element is initialized.
+    // Render an element with both search box and search results in div with id 'test'.
+    google.search.cse.element.render({
+          div: "test",
+          tag: 'search'
+   });
+  } else {
+    // Document is not ready yet, when CSE element is initialized.
+    google.setOnLoadCallback(function() {
+       // Render an element with both search box and search results in div with id 'test'.
+        google.search.cse.element.render(
+            {
+              div: "test",
+              tag: 'search'
+            });
+    }, true);
+  }
+};
+
+// Insert it before the CSE code snippet so that cse.js can take the script
+// parameters, like parsetags, callbacks.
+window.__gcse = {
+  parsetags: 'explicit',
+  callback: myCallback
+};
+
+    (function() {
+    var cx = '014848150299859228476:zjwc39lfgqq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = false;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+    })();
+    
+</script>
+
+
+</body>
+</html>
+<script>
+    setTimeout(function() {
+        $('input.gsc-input').attr('placeholder', '');
+        $('.gsc-search-button.gsc-search-button-v2').attr('src', './images/gs_blue.png');
+    }, 3000)
+</script>
+</body>
+</html>

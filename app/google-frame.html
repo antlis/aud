@@ -8,654 +8,91 @@
     <link href="https://www.google.ru/images/branding/product/ico/googleg_lodp.ico" rel="shortcut icon">
     <meta content="origin" id="mref" name="referrer">
     <title>Google</title>
-    
+
+    <style>
+        .gsc-input-box {
+            height: 39px;
+            line-height: 34px;
+            /*box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);*/
+            box-shadow: 0 -2px 0 2px rgba(0,0,0,.1);
+            transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            border-radius: 2px;
+        }
+        
+        .gsc-input-box-focus {
+            border: none;
+            box-shadow: none;
+        }
+        
+        .gsib_b {
+            line-height: 39px;
+        }
+        
+        .gsc-search-button.gsc-search-button-v2 {
+            position: relative;
+            left: -20px;
+            outline: none;
+        }
+        
+        .gsc-i-id1 {
+            background-image: none !important;
+            background: none !important;
+            background-position: -200px 0 !important;
+        }
+        
+        .gsc-input {
+            background-image: none !important;
+            background: none !important;
+            background-position: -200px 0 !important; 
+        }
+        
+        .gsearch {
+            color: blue;
+        }
+    </style>
+
+
     <script>
-    (function() {
-    var cx = '014848150299859228476:zjwc39lfgqq';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-    })();
-    </script>
-    
-    <script>
-        (function() {
-            window.google = {
-                kEI: 'nCPRWOnWEsqNsgHw4bvYCA',
-                kEXPI: '18167,750722,1352993,3700307,3700347,3700405,4003510,4029815,4031109,4032677,4036527,4038012,4038214,4038394,4039268,4040138,4041776,4043492,4045096,4045293,4045841,4046835,4046837,4046904,4047140,4047454,4047593,4048347,4048980,4050750,4051887,4056126,4056682,4058016,4061666,4061980,4062724,4063220,4064468,4064727,4064796,4065786,4066195,4068291,4069829,4071757,4071842,4072270,4072364,4072774,4073405,4075963,4076095,4076999,4078430,4078588,4078760,4080760,4081038,4081165,4082230,4083297,4085685,4088340,4088408,4089338,4090550,4090553,4090806,4090886,4090894,4092183,4092475,4092479,4092934,4093136,4093243,4093498,4093808,4093948,4093951,4094251,4094544,4094768,4095381,4095998,4096323,4096392,4096464,4096752,4096756,4096758,4096952,4097145,4097146,4097147,4097203,4097653,4097922,4097929,4097951,4098027,4098047,4098458,4098733,4098740,4098752,4098777,4100170,4100380,4100683,4100714,4101224,4101300,4101317,4101368,4101375,4101599,4101881,4102312,4102315,4102399,4102411,4102658,4102689,4102988,4103040,4103041,4103061,4103238,8300497,8500572,8503585,8505259,8507380,8508229,8508931,8509037,8509373,8510786,10200083,10202230,41027342',
-                authuser: 0,
-                j: {
-                    en: 1,
-                    bv: 24,
-                    pm: 'p',
-                    u: 'c9c918f0',
-                    qbp: 0
-                },
-                kscs: 'c9c918f0_24'
-            };
-            google.kHL = 'en-RU';
-        })();
-        (function() {
-            google.lc = [];
-            google.li = 0;
-            google.getEI = function(a) {
-                for (var b; a && (!a.getAttribute || !(b = a.getAttribute("eid")));) a = a.parentNode;
-                return b || google.kEI
-            };
-            google.getLEI = function(a) {
-                for (var b = null; a && (!a.getAttribute || !(b = a.getAttribute("leid")));) a = a.parentNode;
-                return b
-            };
-            google.https = function() {
-                return "https:" == window.location.protocol
-            };
-            google.ml = function() {
-                return null
-            };
-            google.wl = function(a, b) {
-                try {
-                    google.ml(Error(a), !1, b)
-                }
-                catch (c) {}
-            };
-            google.time = function() {
-                return (new Date).getTime()
-            };
-            google.log = function(a, b, c, d, g) {
-                a = google.logUrl(a, b, c, d, g);
-                if ("" != a) {
-                    b = new Image;
-                    var e = google.lc,
-                        f = google.li;
-                    e[f] = b;
-                    b.onerror = b.onload = b.onabort = function() {
-                        delete e[f]
-                    };
-                    window.google && window.google.vel && window.google.vel.lu && window.google.vel.lu(a);
-                    b.src = a;
-                    google.li = f + 1
-                }
-            };
-            google.logUrl = function(a, b, c, d, g) {
-                var e = "",
-                    f = google.ls || "";
-                c || -1 != b.search("&ei=") || (e = "&ei=" + google.getEI(d), -1 == b.search("&lei=") && (d = google.getLEI(d)) && (e += "&lei=" + d));
-                a = c || "/" + (g || "gen_204") + "?atyp=i&ct=" + a + "&cad=" + b + e + f + "&zx=" + google.time();
-                /^http:/i.test(a) && google.https() && (google.ml(Error("a"), !1, {
-                    src: a,
-                    glmm: 1
-                }), a = "");
-                return a
-            };
-            google.y = {};
-            google.x = function(a, b) {
-                google.y[a.id] = [a, b];
-                return !1
-            };
-            google.lq = [];
-            google.load = function(a, b, c) {
-                google.lq.push([
-                    [a], b, c
-                ])
-            };
-            google.loadAll = function(a, b) {
-                google.lq.push([a, b])
-            };
-        }).call(this);
-        google.j.b = (!!location.hash && !!location.hash.match('[#&]((q|fp)=|tbs=rimg|tbs=simg|tbs=sbi)')) ||
-            (google.j.qbp == 1);
-        (function() {
-            google.hs = {
-                h: true,
-                pa: true,
-                q: false
-            };
-        })();
-        (function() {
-            google.c = {
-                c: {
-                    a: true,
-                    d: false,
-                    i: false,
-                    m: true,
-                    n: false
-                }
-            };
-            google.sn = 'webhp';
-            (function() {
-                var e = function(a, b, c) {
-                        a.addEventListener ? a.removeEventListener(b, c, !1) : a.attachEvent && a.detachEvent("on" + b, c)
-                    },
-                    g = function(a, b, c) {
-                        f.push({
-                            o: a,
-                            v: b,
-                            w: c
-                        });
-                        a.addEventListener ? a.addEventListener(b, c, !1) : a.attachEvent && a.attachEvent("on" + b, c)
-                    },
-                    f = [];
-                google.timers = {};
-                google.startTick = function(a, b) {
-                    var c = b && google.timers[b].t ? google.timers[b].t.start : google.time();
-                    google.timers[a] = {
-                        t: {
-                            start: c
-                        },
-                        e: {},
-                        it: {},
-                        m: {}
-                    };
-                    (c = window.performance) && c.now && (google.timers[a].wsrt = Math.floor(c.now()))
-                };
-                google.tick = function(a, b, c) {
-                    google.timers[a] || google.startTick(a);
-                    c = c || google.time();
-                    b instanceof Array || (b = [b]);
-                    for (var d = 0; d < b.length; ++d) google.timers[a].t[b[d]] = c
-                };
-                google.c.e = function(a, b, c) {
-                    google.timers[a].e[b] = c
-                };
-                google.bit = function(a, b) {
-                    google.timers[a] || google.startTick(a);
-                    var c = google.timers[a].it[b];
-                    c || (c = google.timers[a].it[b] = []);
-                    var d = c.push({
-                        s: google.time()
-                    }) - 1;
-                    return function() {
-                        c[d] && (c[d].e = google.time())
-                    }
-                };
-                google.c.b = function(a) {
-                    var b = google.timers.load.m;
-                    b[a] && google.wl("ch_mab", {
-                        m: a
+        var myCallback = function() {
+            if (document.readyState == 'complete') {
+                // Document is ready when CSE element is initialized.
+                // Render an element with both search box and search results in div with id 'test'.
+                google.search.cse.element.render({
+                    div: "test",
+                    tag: 'search'
+                });
+            }
+            else {
+                // Document is not ready yet, when CSE element is initialized.
+                google.setOnLoadCallback(function() {
+                    // Render an element with both search box and search results in div with id 'test'.
+                    google.search.cse.element.render({
+                        div: "test",
+                        tag: 'search'
                     });
-                    b[a] = !0
-                };
-                google.c.u = function(a) {
-                    var b = google.timers.load.m;
-                    if (b[a]) {
-                        b[a] = !1;
-                        for (a in b)
-                            if (b[a]) return;
-                        google.csiReport()
-                    }
-                    else google.wl("ch_mnb", {
-                        m: a
-                    })
-                };
-                google.rll = function(a, b, c) {
-                    var d = function(b) {
-                        c(b);
-                        e(a, "load", d);
-                        e(a, "error", d)
-                    };
-                    g(a, "load", d);
-                    b && g(a, "error", d)
-                };
-                google.ull = function() {
-                    for (var a; a = f.shift();) e(a.o, a.v, a.w)
-                };
-                google.iTick = function(a) {
-                    var b = google.time();
-                    google.tick("load", "iml", b);
-                    a = a.id || a.src || a.name;
-                    google.tick("iml", a, b);
-                    google.c.c.a && google.tick("aft", a, b)
-                };
-                google.afte = !0;
-                google.aft = function(a) {
-                    google.c.c.a && google.afte && google.tick("aft", a.id || a.src || a.name)
-                };
-                google.startTick("load");
-                google.c.b("pr");
-                google.c.b("xe");
-            }).call(this);
+                }, true);
+            }
+        };
+
+        // Insert it before the CSE code snippet so that cse.js can take the script
+        // parameters, like parsetags, callbacks.
+        window.__gcse = {
+            parsetags: 'explicit',
+            callback: myCallback
+        };
+
+        (function() {
+            var cx = '014848150299859228476:zjwc39lfgqq';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = false;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
         })();
-        (function() {
-            'use strict';
-            var k = this,
-                l = Date.now || function() {
-                    return +new Date
-                };
-            var u = {};
-            var w = function(a, d) {
-                if (null === d) return !1;
-                if ("contains" in a && 1 == d.nodeType) return a.contains(d);
-                if ("compareDocumentPosition" in a) return a == d || !!(a.compareDocumentPosition(d) & 16);
-                for (; d && a != d;) d = d.parentNode;
-                return d == a
-            };
-            var x = function(a, d) {
-                    return function(b) {
-                        b || (b = window.event);
-                        return d.call(a, b)
-                    }
-                },
-                B = function(a) {
-                    a = a.target || a.srcElement;
-                    !a.getAttribute && a.parentNode && (a = a.parentNode);
-                    return a
-                },
-                C = "undefined" != typeof navigator && /Macintosh/.test(navigator.userAgent),
-                D = "undefined" != typeof navigator && !/Opera/.test(navigator.userAgent) && /WebKit/.test(navigator.userAgent),
-                E = {
-                    A: 1,
-                    INPUT: 1,
-                    TEXTAREA: 1,
-                    SELECT: 1,
-                    BUTTON: 1
-                },
-                F = function() {
-                    this._mouseEventsPrevented = !0
-                },
-                G = {
-                    A: 13,
-                    BUTTON: 0,
-                    CHECKBOX: 32,
-                    COMBOBOX: 13,
-                    GRIDCELL: 13,
-                    LINK: 13,
-                    LISTBOX: 13,
-                    MENU: 0,
-                    MENUBAR: 0,
-                    MENUITEM: 0,
-                    MENUITEMCHECKBOX: 0,
-                    MENUITEMRADIO: 0,
-                    OPTION: 0,
-                    RADIO: 32,
-                    RADIOGROUP: 32,
-                    RESET: 0,
-                    SUBMIT: 0,
-                    TAB: 0,
-                    TREE: 13,
-                    TREEITEM: 13
-                },
-                H = function(a) {
-                    return (a.getAttribute("type") || a.tagName).toUpperCase() in aa
-                },
-                I = function(a) {
-                    return (a.getAttribute("type") || a.tagName).toUpperCase() in ba
-                },
-                aa = {
-                    CHECKBOX: !0,
-                    OPTION: !0,
-                    RADIO: !0
-                },
-                ba = {
-                    COLOR: !0,
-                    DATE: !0,
-                    DATETIME: !0,
-                    "DATETIME-LOCAL": !0,
-                    EMAIL: !0,
-                    MONTH: !0,
-                    NUMBER: !0,
-                    PASSWORD: !0,
-                    RANGE: !0,
-                    SEARCH: !0,
-                    TEL: !0,
-                    TEXT: !0,
-                    TEXTAREA: !0,
-                    TIME: !0,
-                    URL: !0,
-                    WEEK: !0
-                },
-                ca = {
-                    A: !0,
-                    AREA: !0,
-                    BUTTON: !0,
-                    DIALOG: !0,
-                    IMG: !0,
-                    INPUT: !0,
-                    LINK: !0,
-                    MENU: !0,
-                    OPTGROUP: !0,
-                    OPTION: !0,
-                    PROGRESS: !0,
-                    SELECT: !0,
-                    TEXTAREA: !0
-                };
-            var J = function() {
-                    this.v = this.o = null
-                },
-                L = function(a, d) {
-                    var b = K;
-                    b.o = a;
-                    b.v = d;
-                    return b
-                };
-            J.prototype.s = function() {
-                var a = this.o;
-                this.o && this.o != this.v ? this.o = this.o.__owner || this.o.parentNode : this.o = null;
-                return a
-            };
-            var M = function() {
-                this.w = [];
-                this.o = 0;
-                this.v = null;
-                this.H = !1
-            };
-            M.prototype.s = function() {
-                if (this.H) return K.s();
-                if (this.o != this.w.length) {
-                    var a = this.w[this.o];
-                    this.o++;
-                    a != this.v && a && a.__owner && (this.H = !0, L(a.__owner, this.v));
-                    return a
-                }
-                return null
-            };
-            var K = new J,
-                O = new M;
-            var Q = function() {
-                    this.S = [];
-                    this.o = [];
-                    this.s = [];
-                    this.H = {};
-                    this.v = null;
-                    this.w = [];
-                    P(this, "_custom")
-                },
-                da = "undefined" != typeof navigator && /iPhone|iPad|iPod/.test(navigator.userAgent),
-                R = String.prototype.trim ? function(a) {
-                    return a.trim()
-                } : function(a) {
-                    return a.replace(/^\s+/, "").replace(/\s+$/, "")
-                },
-                ea = /\s*;\s*/,
-                ia = function(a, d) {
-                    return function(b) {
-                        var c = d;
-                        if ("_custom" == c) {
-                            c = b.detail;
-                            if (!c || !c._type) return;
-                            c = c._type
-                        }
-                        var e;
-                        if ("click" == c && (C && b.metaKey || !C && b.ctrlKey || 2 == b.which || null == b.which && 4 == b.button || b.shiftKey)) c = "clickmod";
-                        else {
-                            var f;
-                            f = b.which || b.keyCode || b.key;
-                            D && 3 == f && (f = 13);
-                            if (13 != f && 32 != f) f = !1;
-                            else {
-                                var m = B(b),
-                                    q = (m.getAttribute("role") || m.type || m.tagName).toUpperCase(),
-                                    h;
-                                (h = "keydown" != b.type) || ("getAttribute" in m ? (h = (m.getAttribute("role") || m.tagName).toUpperCase(), h = !I(m) && ("COMBOBOX" != h || "INPUT" != h) && !m.isContentEditable) : h = !1, h = !h);
-                                (h =
-                                    h || b.ctrlKey || b.shiftKey || b.altKey || b.metaKey || H(m) && 32 == f) || ((h = m.tagName in E) || (h = m.getAttributeNode("tabindex"), h = null != h && h.specified), h = !(h && !m.disabled));
-                                h ? f = !1 : (m = "INPUT" != m.tagName.toUpperCase() || m.type, h = !(q in G) && 13 == f, f = (0 == G[q] % f || h) && !!m)
-                            }
-                            f && (c = "clickkey")
-                        }
-                        q = b.srcElement || b.target;
-                        f = S(c, b, q, "", null);
-                        var g;
-                        b.path ? (O.w = b.path, O.o = 0, O.v = this, O.H = !1, m = O) : m = L(q, this);
-                        for (; h = m.s();) {
-                            e = h;
-                            var t;
-                            g = e;
-                            h = c;
-                            var p = g.__jsaction;
-                            if (!p)
-                                if (t = null, "getAttribute" in g && (t = g.getAttribute("jsaction")), t) {
-                                    p =
-                                        u[t];
-                                    if (!p) {
-                                        for (var p = {}, y = t.split(ea), z = 0, fa = y ? y.length : 0; z < fa; z++) {
-                                            var r = y[z];
-                                            if (r) {
-                                                var A = r.indexOf(":"),
-                                                    N = -1 != A,
-                                                    ga = N ? R(r.substr(0, A)) : "click",
-                                                    r = N ? R(r.substr(A + 1)) : r;
-                                                p[ga] = r
-                                            }
-                                        }
-                                        u[t] = p
-                                    }
-                                    g.__jsaction = p
-                                }
-                                else p = ha, g.__jsaction = p;
-                                "clickkey" == h ? h = "click" : "click" != h || p.click || (h = "clickonly");
-                            g = {
-                                R: h,
-                                action: p[h] || "",
-                                event: null,
-                                U: !1
-                            };
-                            f = S(g.R, g.event || b, q, g.action || "", e, f.timeStamp);
-                            if (g.U || g.action) break
-                        }
-                        f && "touchend" == f.eventType && (f.event._preventMouseEvents = F);
-                        if (g && g.action) {
-                            if (g = "clickkey" == c) g = B(b), g =
-                                (g.type || g.tagName).toUpperCase(), (g = 32 == (b.which || b.keyCode || b.key) && "CHECKBOX" != g) || (g = B(b), q = (g.getAttribute("role") || g.tagName).toUpperCase(), g = g.tagName.toUpperCase() in ca && "A" != q && !H(g) && !I(g) || "BUTTON" == q);
-                            g && (b.preventDefault ? b.preventDefault() : b.returnValue = !1);
-                            if ("mouseenter" == c || "mouseleave" == c)
-                                if (g = b.relatedTarget, !("mouseover" == b.type && "mouseenter" == c || "mouseout" == b.type && "mouseleave" == c) || g && (g === e || w(e, g))) f.action = "", f.actionElement = null;
-                                else {
-                                    var c = {},
-                                        n;
-                                    for (n in b) "function" !== typeof b[n] &&
-                                        "srcElement" !== n && "target" !== n && (c[n] = b[n]);
-                                    c.type = "mouseover" == b.type ? "mouseenter" : "mouseleave";
-                                    c.target = c.srcElement = e;
-                                    c.bubbles = !1;
-                                    f.event = c;
-                                    f.targetElement = e
-                                }
-                        }
-                        else f.action = "", f.actionElement = null;
-                        e = f;
-                        a.v && (n = S(e.eventType, e.event, e.targetElement, e.action, e.actionElement, e.timeStamp), "clickonly" == n.eventType && (n.eventType = "click"), a.v(n, !0));
-                        if (e.actionElement) {
-                            "A" != e.actionElement.tagName || "click" != e.eventType && "clickmod" != e.eventType || (b.preventDefault ? b.preventDefault() : b.returnValue = !1);
-                            if (a.v) a.v(e);
-                            else {
-                                var v;
-                                if ((n = k.document) && !n.createEvent && n.createEventObject) try {
-                                    v = n.createEventObject(b)
-                                }
-                                catch (la) {
-                                    v = b
-                                }
-                                else v = b;
-                                e.event = v;
-                                a.w.push(e)
-                            }
-                            if ("touchend" == e.event.type && e.event._mouseEventsPrevented) {
-                                b = e.event;
-                                for (var ma in b);
-                                l()
-                            }
-                        }
-                    }
-                },
-                S = function(a, d, b, c, e, f) {
-                    return {
-                        eventType: a,
-                        event: d,
-                        targetElement: b,
-                        action: c,
-                        actionElement: e,
-                        timeStamp: f || l()
-                    }
-                },
-                ha = {},
-                ja = function(a, d) {
-                    return function(b) {
-                        var c = a,
-                            e = d,
-                            f = !1;
-                        "mouseenter" == c ? c = "mouseover" : "mouseleave" == c && (c = "mouseout");
-                        if (b.addEventListener) {
-                            if ("focus" == c || "blur" == c || "error" == c || "load" == c) f = !0;
-                            b.addEventListener(c, e, f)
-                        }
-                        else b.attachEvent && ("focus" == c ? c = "focusin" : "blur" == c && (c = "focusout"), e = x(b, e), b.attachEvent("on" + c, e));
-                        return {
-                            R: c,
-                            T: e,
-                            capture: f
-                        }
-                    }
-                },
-                P = function(a, d) {
-                    if (!a.H.hasOwnProperty(d)) {
-                        var b = ia(a, d),
-                            c = ja(d, b);
-                        a.H[d] = b;
-                        a.S.push(c);
-                        for (b = 0; b < a.o.length; ++b) {
-                            var e = a.o[b];
-                            e.s.push(c.call(null, e.o))
-                        }
-                        "click" == d && P(a, "keydown")
-                    }
-                };
-            Q.prototype.T = function(a) {
-                return this.H[a]
-            };
-            var W = function(a, d) {
-                    var b = new ka(d);
-                    a: {
-                        for (var c = 0; c < a.o.length; c++)
-                            if (T(a.o[c], d)) {
-                                d = !0;
-                                break a
-                            }
-                        d = !1
-                    }
-                    if (d) return a.s.push(b), b;
-                    U(a, b);
-                    a.o.push(b);
-                    V(a);
-                    return b
-                },
-                V = function(a) {
-                    for (var d = a.s.concat(a.o), b = [], c = [], e = 0; e < a.o.length; ++e) {
-                        var f = a.o[e];
-                        X(f, d) ? (b.push(f), Y(f)) : c.push(f)
-                    }
-                    for (e = 0; e < a.s.length; ++e) f = a.s[e], X(f, d) ? b.push(f) : (c.push(f), U(a, f));
-                    a.o = c;
-                    a.s = b
-                },
-                U = function(a, d) {
-                    var b = d.o;
-                    da && (b.style.cursor = "pointer");
-                    for (b = 0; b < a.S.length; ++b) d.s.push(a.S[b].call(null, d.o))
-                },
-                ka = function(a) {
-                    this.o = a;
-                    this.s = []
-                },
-                T = function(a, d) {
-                    for (a = a.o; a != d && d.parentNode;) d = d.parentNode;
-                    return a == d
-                },
-                X = function(a, d) {
-                    for (var b = 0; b < d.length; ++b)
-                        if (d[b].o != a.o && T(d[b], a.o)) return !0;
-                    return !1
-                },
-                Y = function(a) {
-                    for (var d = 0; d < a.s.length; ++d) {
-                        var b = a.o,
-                            c = a.s[d];
-                        b.removeEventListener ? b.removeEventListener(c.R, c.T, c.capture) : b.detachEvent && b.detachEvent("on" + c.R, c.T)
-                    }
-                    a.s = []
-                };
-            var Z = new Q;
-            W(Z, window.document.documentElement);
-            P(Z, "click");
-            P(Z, "focus");
-            P(Z, "focusin");
-            P(Z, "blur");
-            P(Z, "focusout");
-            P(Z, "error");
-            P(Z, "load");
-            P(Z, "change");
-            P(Z, "dblclick");
-            P(Z, "input");
-            P(Z, "keyup");
-            P(Z, "keydown");
-            P(Z, "keypress");
-            P(Z, "mousedown");
-            P(Z, "mouseenter");
-            P(Z, "mouseleave");
-            P(Z, "mouseout");
-            P(Z, "mouseover");
-            P(Z, "mouseup");
-            P(Z, "touchstart");
-            P(Z, "touchend");
-            P(Z, "touchcancel");
-            P(Z, "speech");
-            (function(a) {
-                window.google.jsad = function(d) {
-                    a.v = d;
-                    a.w && (0 < a.w.length && d(a.w), a.w = null)
-                };
-                window.google.jsaac = function(d) {
-                    return W(a, d)
-                };
-                window.google.jsarc = function(d) {
-                    Y(d);
-                    for (var b = !1, c = 0; c < a.o.length; ++c)
-                        if (a.o[c] === d) {
-                            a.o.splice(c, 1);
-                            b = !0;
-                            break
-                        }
-                    if (!b)
-                        for (c = 0; c < a.s.length; ++c)
-                            if (a.s[c] === d) {
-                                a.s.splice(c, 1);
-                                break
-                            }
-                    V(a)
-                }
-            })(Z);
-        }).call(this);
-        (function() {
-            'use strict';
-            var e = this,
-                f = function(b, d) {
-                    b = b.split(".");
-                    var a = e;
-                    b[0] in a || !a.execScript || a.execScript("var " + b[0]);
-                    for (var c; b.length && (c = b.shift());) b.length || void 0 === d ? a[c] && a[c] !== Object.prototype[c] ? a = a[c] : a = a[c] = {} : a[c] = d
-                };
-            var g = [];
-            f("google.jsc.xx", g);
-            f("google.jsc.x", function(b) {
-                g.push(b)
-            });
-        }).call(this);
-        google.arwt = function(a) {
-            a.href = document.getElementById(a.id.substring(1)).href;
-            return !0
-        };
-        google.ausb = function(a) {
-            var b = document.getElementById(a.id.substring(1)),
-                c = b.getAttribute("data-sbt"),
-                d = a.getAttribute("data-ved");
-            d && c && (c = c + "&ved=" + d);
-            b = b.getAttribute("data-sbf");
-            c && b && navigator.sendBeacon && navigator.sendBeacon(c + "&bt=1") ? a.href = b : (d && (a.href = a.href + "&ved=" + d), a.href = a.href + "&bt=2");
-            return !0
-        };
     </script>
+
+
     <style>
         [dir='ltr'],
         [dir='rtl'] {
@@ -3845,836 +3282,8 @@
             background-color: #4279d8
         }
     </style>
-    <script>
-        (function() {
-            var b = [function() {
-                google.c && google.tick("load", "dcl")
-            }];
-            google.dcl = !1;
-            google.dclc = function(a) {
-                google.dcl ? a() : b.push(a)
-            };
 
-            function c() {
-                if (!google.dcl) {
-                    google.dcl = !0;
-                    for (var a; a = b.shift();) a()
-                }
-            }
-            window.addEventListener ? (document.addEventListener("DOMContentLoaded", c, !1), window.addEventListener("load", c, !1)) : window.attachEvent && window.attachEvent("onload", c);
-        }).call(this);
-        window.rwt = function(a, l, m, n, i, f, b, j, g, d) {
-            return true
-        };
-        (window['gbar'] = window['gbar'] || {})._CONFIG = [
-            [
-                [0, "www.gstatic.com", "og.og2.en_US.Y8UfcLxCbog.O", "ru", "en", "1", 0, [3, 2, ".40.", "", "1300102,3700307,3700347,3700405", "1489631639", "0"], "40400", "nCPRWKS6E4G5swGW27LgBQ", 0, 0, "og.og2.1rhwnu90k31jy.L.W.O", "AA2YrTt5ren-o13eDnGlBE89XG5bv_gcdw", "AA2YrTtFibiJHpmc95SSDjjE0gOO2TuiHw", "", 2, 0, 200, "RUS"], null, 0, ["m;/_/scs/abc-static/_/js/k=gapi.gapi.en.DTPeBB_SvOA.O/m=__features__/rt=j/d=1/rs=AHpOoo-J3J0yqNDMPVrmQT6j-SBFfGx8oA", "https://apis.google.com", "", "", "", "", null, 1, "es_plusone_gc_20170309.0_p0", "en"],
-                ["1", "gci_91f30755d6a6b787dcc2a4062e6e9824.js", "googleapis.client:plusone:gapi.iframes", "", "en"], null, null, null, [0.009999999776482582, "ru", "1", [null, "", "w", null, 1, 5184000, 1, 1, "&cot=2", 0, 0, "", 0], null, [
-                    ["", "", "0", 0, 0, -1]
-                ], null, 0, null, null, ["5061451", "google\\.(com|ru|ca|by|kz|com\\.mx|com\\.tr)$", 1]], null, [0, 0, 0, null, "", "", "", ""],
-                [1, 0.001000000047497451, 1],
-                [1, 0.1000000014901161, 2, 1],
-                [0, "", null, "", 0, "There was an error loading your Marketplace apps.", "You have no Marketplace apps.", 0, [1, "https://www.google.ru/webhp?tab=ww", "Search", "", "0 -276px", null, 0], null, null, 1, 0],
-                [1],
-                [0, 1, ["lg"], 1, ["lat"]],
-                [
-                    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "def", "", "", "", "", "", "", ""],
-                    [""]
-                ], null, null, null, [30, 127, 1, 0, 60], null, null, null, null, null, [1, 0], null, [1, 0.001000000047497451, 0, 40400, 1, "RUS", "en", "1489631639.0", 1]
-            ]
-        ];
-        (window['gbar'] = window['gbar'] || {})._LDD = ["in", "fot"]; /* _GlobalPrefix_ */
-        this.gbar_ = this.gbar_ || {};
-        (function(_) {
-            var window = this;
-            /* _Module_:_r */
-            try {
-                var aa, ba, ca, da, qa, sa;
-                for (_.k, aa = "function" == typeof Object.defineProperties ? Object.defineProperty : function(a, c, d) {
-                        if (d.get || d.set) throw new TypeError("ES3 does not support getters and setters.");
-                        a != Array.prototype && a != Object.prototype && (a[c] = d.value)
-                    }, ba = "undefined" != typeof window && window === this ? this : "undefined" != typeof window.global && null != window.global ? window.global : this, ca = ["String", "prototype", "startsWith"], da = 0; da < ca.length - 1; da++) {
-                    var ea = ca[da];
-                    ea in ba || (ba[ea] = {});
-                    ba = ba[ea]
-                }
-                var fa = ca[ca.length - 1],
-                    ha = ba[fa],
-                    ia = ha ? ha : function(a, c) {
-                        var d;
-                        if (null == this) throw new TypeError("The 'this' value for String.prototype.startsWith must not be null or undefined");
-                        if (a instanceof RegExp) throw new TypeError("First argument to String.prototype.startsWith must not be a regular expression");
-                        d = this + "";
-                        a += "";
-                        var e = d.length,
-                            f = a.length;
-                        c = Math.max(0, Math.min(c | 0, d.length));
-                        for (var g = 0; g < f && c < e;)
-                            if (d[c++] != a[g++]) return !1;
-                        return g >= f
-                    };
-                ia != ha && null != ia && aa(ba, fa, {
-                    configurable: !0,
-                    writable: !0,
-                    value: ia
-                });
-                _.ja = _.ja || {};
-                _.m = this;
-                _.n = function(a) {
-                    return void 0 !== a
-                };
-                _.p = function(a, c) {
-                    a = a.split(".");
-                    c = c || _.m;
-                    for (var d; d = a.shift();)
-                        if (null != c[d]) c = c[d];
-                        else return null;
-                    return c
-                };
-                _.ka = function() {};
-                _.la = function(a) {
-                    a.xd = void 0;
-                    a.V = function() {
-                        return a.xd ? a.xd : a.xd = new a
-                    }
-                };
-                _.ma = function(a) {
-                    var c = typeof a;
-                    if ("object" == c)
-                        if (a) {
-                            if (a instanceof Array) return "array";
-                            if (a instanceof Object) return c;
-                            var d = Object.prototype.toString.call(a);
-                            if ("[object Window]" == d) return "object";
-                            if ("[object Array]" == d || "number" == typeof a.length && "undefined" != typeof a.splice && "undefined" != typeof a.propertyIsEnumerable && !a.propertyIsEnumerable("splice")) return "array";
-                            if ("[object Function]" == d || "undefined" != typeof a.call && "undefined" != typeof a.propertyIsEnumerable && !a.propertyIsEnumerable("call")) return "function"
-                        }
-                        else return "null";
-                    else if ("function" == c && "undefined" == typeof a.call) return "object";
-                    return c
-                };
-                _.na = function(a) {
-                    return "array" == _.ma(a)
-                };
-                _.t = function(a) {
-                    return "string" == typeof a
-                };
-                _.oa = function(a) {
-                    return "number" == typeof a
-                };
-                _.pa = "closure_uid_" + (1E9 * Math.random() >>> 0);
-                qa = function(a, c, d) {
-                    return a.call.apply(a.bind, arguments)
-                };
-                sa = function(a, c, d) {
-                    if (!a) throw Error();
-                    if (2 < arguments.length) {
-                        var e = Array.prototype.slice.call(arguments, 2);
-                        return function() {
-                            var d = Array.prototype.slice.call(arguments);
-                            Array.prototype.unshift.apply(d, e);
-                            return a.apply(c, d)
-                        }
-                    }
-                    return function() {
-                        return a.apply(c, arguments)
-                    }
-                };
-                _.u = function(a, c, d) {
-                    Function.prototype.bind && -1 != Function.prototype.bind.toString().indexOf("native code") ? _.u = qa : _.u = sa;
-                    return _.u.apply(null, arguments)
-                };
-                _.w = Date.now || function() {
-                    return +new Date
-                };
-                _.x = function(a, c) {
-                    a = a.split(".");
-                    var d = _.m;
-                    a[0] in d || !d.execScript || d.execScript("var " + a[0]);
-                    for (var e; a.length && (e = a.shift());) !a.length && _.n(c) ? d[e] = c : d[e] && d[e] !== Object.prototype[e] ? d = d[e] : d = d[e] = {}
-                };
-                _.y = function(a, c) {
-                    function d() {}
-                    d.prototype = c.prototype;
-                    a.J = c.prototype;
-                    a.prototype = new d;
-                    a.prototype.constructor = a;
-                    a.aj = function(a, d, g) {
-                        for (var e = Array(arguments.length - 2), f = 2; f < arguments.length; f++) e[f - 2] = arguments[f];
-                        return c.prototype[d].apply(a, e)
-                    }
-                };
-                var ta = function(a, c, d) {
-                    this.A = a;
-                    this.o = !1;
-                    this.b = c;
-                    this.w = d
-                };
-                ta.prototype.Sa = function(a) {
-                    if (this.o) throw Error("a`" + this.b);
-                    try {
-                        a.apply(this.A, this.w), this.o = !0
-                    }
-                    catch (c) {}
-                };
-                _.z = function() {
-                    this.ea = this.ea;
-                    this.Ra = this.Ra
-                };
-                _.z.prototype.ea = !1;
-                _.z.prototype.fa = function() {
-                    this.ea || (this.ea = !0, this.O())
-                };
-                _.z.prototype.O = function() {
-                    if (this.Ra)
-                        for (; this.Ra.length;) this.Ra.shift()()
-                };
-                var ua = function(a) {
-                    _.z.call(this);
-                    this.w = a;
-                    this.b = [];
-                    this.o = {}
-                };
-                _.y(ua, _.z);
-                ua.prototype.A = function(a) {
-                    var c = (0, _.u)(function() {
-                        this.b.push(new ta(this.w, a, Array.prototype.slice.call(arguments)))
-                    }, this);
-                    return this.o[a] = c
-                };
-                ua.prototype.Sa = function() {
-                    for (var a = this.b.length, c = this.b, d = [], e = 0; e < a; ++e) {
-                        var f = c[e].b,
-                            g;
-                        a: {
-                            g = this.w;
-                            for (var h = f.split("."), l = h.length, q = 0; q < l; ++q)
-                                if (g[h[q]]) g = g[h[q]];
-                                else {
-                                    g = null;
-                                    break a
-                                }
-                            g = g instanceof Function ? g : null
-                        }
-                        if (g && g != this.o[f]) try {
-                            c[e].Sa(g)
-                        }
-                        catch (r) {}
-                        else d.push(c[e])
-                    }
-                    this.b = d.concat(c.slice(a))
-                };
-                _.va = function(a) {
-                    if (Error.captureStackTrace) Error.captureStackTrace(this, _.va);
-                    else {
-                        var c = Error().stack;
-                        c && (this.stack = c)
-                    }
-                    a && (this.message = String(a))
-                };
-                _.y(_.va, Error);
-                _.va.prototype.name = "CustomError";
-                var xa;
-                _.wa = String.prototype.trim ? function(a) {
-                    return a.trim()
-                } : function(a) {
-                    return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g, "")
-                };
-                _.ya = function(a, c) {
-                    var d = 0;
-                    a = (0, _.wa)(String(a)).split(".");
-                    c = (0, _.wa)(String(c)).split(".");
-                    for (var e = Math.max(a.length, c.length), f = 0; 0 == d && f < e; f++) {
-                        var g = a[f] || "",
-                            h = c[f] || "";
-                        do {
-                            g = /(\d*)(\D*)(.*)/.exec(g) || ["", "", "", ""];
-                            h = /(\d*)(\D*)(.*)/.exec(h) || ["", "", "", ""];
-                            if (0 == g[0].length && 0 == h[0].length) break;
-                            d = xa(0 == g[1].length ? 0 : (0, window.parseInt)(g[1], 10), 0 == h[1].length ? 0 : (0, window.parseInt)(h[1], 10)) || xa(0 == g[2].length, 0 == h[2].length) || xa(g[2], h[2]);
-                            g = g[3];
-                            h = h[3]
-                        } while (0 == d)
-                    }
-                    return d
-                };
-                xa = function(a, c) {
-                    return a < c ? -1 : a > c ? 1 : 0
-                };
-                _.za = Array.prototype.indexOf ? function(a, c, d) {
-                    return Array.prototype.indexOf.call(a, c, d)
-                } : function(a, c, d) {
-                    d = null == d ? 0 : 0 > d ? Math.max(0, a.length + d) : d;
-                    if (_.t(a)) return _.t(c) && 1 == c.length ? a.indexOf(c, d) : -1;
-                    for (; d < a.length; d++)
-                        if (d in a && a[d] === c) return d;
-                    return -1
-                };
-                _.Ba = Array.prototype.forEach ? function(a, c, d) {
-                    Array.prototype.forEach.call(a, c, d)
-                } : function(a, c, d) {
-                    for (var e = a.length, f = _.t(a) ? a.split("") : a, g = 0; g < e; g++) g in f && c.call(d, f[g], g, a)
-                };
-                _.Ca = Array.prototype.filter ? function(a, c, d) {
-                    return Array.prototype.filter.call(a, c, d)
-                } : function(a, c, d) {
-                    for (var e = a.length, f = [], g = 0, h = _.t(a) ? a.split("") : a, l = 0; l < e; l++)
-                        if (l in h) {
-                            var q = h[l];
-                            c.call(d, q, l, a) && (f[g++] = q)
-                        }
-                    return f
-                };
-                _.Da = Array.prototype.map ? function(a, c, d) {
-                    return Array.prototype.map.call(a, c, d)
-                } : function(a, c, d) {
-                    for (var e = a.length, f = Array(e), g = _.t(a) ? a.split("") : a, h = 0; h < e; h++) h in g && (f[h] = c.call(d, g[h], h, a));
-                    return f
-                };
-                _.Ea = Array.prototype.reduce ? function(a, c, d, e) {
-                    e && (c = (0, _.u)(c, e));
-                    return Array.prototype.reduce.call(a, c, d)
-                } : function(a, c, d, e) {
-                    var f = d;
-                    (0, _.Ba)(a, function(d, h) {
-                        f = c.call(e, f, d, h, a)
-                    });
-                    return f
-                };
-                _.Fa = Array.prototype.some ? function(a, c, d) {
-                    return Array.prototype.some.call(a, c, d)
-                } : function(a, c, d) {
-                    for (var e = a.length, f = _.t(a) ? a.split("") : a, g = 0; g < e; g++)
-                        if (g in f && c.call(d, f[g], g, a)) return !0;
-                    return !1
-                };
-                var Na;
-                _.Ga = function() {
-                    this.b = {};
-                    this.o = {}
-                };
-                _.la(_.Ga);
-                _.Ia = function(a, c) {
-                    a.V = function() {
-                        return _.Ha(_.Ga.V(), c)
-                    };
-                    a.fi = function() {
-                        return _.Ga.V().b[c] || null
-                    }
-                };
-                _.Ka = function(a, c) {
-                    var d = _.Ga.V();
-                    if (a in d.b) {
-                        if (d.b[a] != c) throw new Ja(a);
-                    }
-                    else {
-                        d.b[a] = c;
-                        if (c = d.o[a])
-                            for (var e = 0, f = c.length; e < f; e++) c[e].b(d.b, a);
-                        delete d.o[a]
-                    }
-                };
-                _.Ha = function(a, c) {
-                    if (c in a.b) return a.b[c];
-                    throw new Ma(c);
-                };
-                Na = function(a) {
-                    _.va.call(this);
-                    this.ja = a
-                };
-                _.y(Na, _.va);
-                var Ja = function(a) {
-                    Na.call(this, a)
-                };
-                _.y(Ja, Na);
-                var Ma = function(a) {
-                    Na.call(this, a)
-                };
-                _.y(Ma, Na);
-                var Pa;
-                _.Oa = "bbh bbr bbs has prm sngw so".split(" ");
-                Pa = new ua(_.m);
-                _.Ka("api", Pa);
-                for (var Ra = "addExtraLink addLink aomc asmc close cp.c cp.l cp.me cp.ml cp.rc cp.rel ela elc elh gpca gpcr lGC lPWF ldb mls noam paa pc pca pcm pw.clk pw.hvr qfaae qfaas qfaau qfae qfas qfau qfhi qm qs qsi rtl sa setContinueCb snaw sncw som sp spd spn spp sps tsl tst up.aeh up.aop up.dpc up.iic up.nap up.r up.sl up.spd up.tp upel upes upet".split(" ").concat(_.Oa), Sa = (0, _.u)(Pa.A, Pa), Ta = 0; Ta < Ra.length; Ta++) {
-                    var Ua = "gbar." + Ra[Ta];
-                    null == _.p(Ua, window) && _.x(Ua, Sa(Ua))
-                }
-                _.x("gbar.up.gpd", function() {
-                    return ""
-                });
-                a: {
-                    var Wa = _.m.navigator;
-                    if (Wa) {
-                        var Xa = Wa.userAgent;
-                        if (Xa) {
-                            _.Va = Xa;
-                            break a
-                        }
-                    }
-                    _.Va = ""
-                }
-                _.A = function(a) {
-                    return -1 != _.Va.indexOf(a)
-                };
-                var Ya = function() {
-                    return (_.A("Chrome") || _.A("CriOS")) && !_.A("Edge")
-                };
-                _.Za = function() {
-                    return _.A("iPhone") && !_.A("iPod") && !_.A("iPad")
-                };
-                _.$a = function() {
-                    return _.Za() || _.A("iPad") || _.A("iPod")
-                };
-                _.ab = function(a) {
-                    _.ab[" "](a);
-                    return a
-                };
-                _.ab[" "] = _.ka;
-                var cb = function(a, c) {
-                    var d = bb;
-                    return Object.prototype.hasOwnProperty.call(d, a) ? d[a] : d[a] = c(a)
-                };
-                var ib, mb, nb, bb, ub;
-                _.db = _.A("Opera");
-                _.B = _.A("Trident") || _.A("MSIE");
-                _.eb = _.A("Edge");
-                _.fb = _.eb || _.B;
-                _.gb = _.A("Gecko") && !(-1 != _.Va.toLowerCase().indexOf("webkit") && !_.A("Edge")) && !(_.A("Trident") || _.A("MSIE")) && !_.A("Edge");
-                _.hb = -1 != _.Va.toLowerCase().indexOf("webkit") && !_.A("Edge");
-                ib = _.m.navigator || null;
-                _.jb = ib && ib.platform || "";
-                _.kb = _.A("Macintosh");
-                _.lb = _.A("Linux") || _.A("CrOS");
-                mb = function() {
-                    var a = _.m.document;
-                    return a ? a.documentMode : void 0
-                };
-                a: {
-                    var ob = "",
-                        pb = function() {
-                            var a = _.Va;
-                            if (_.gb) return /rv\:([^\);]+)(\)|;)/.exec(a);
-                            if (_.eb) return /Edge\/([\d\.]+)/.exec(a);
-                            if (_.B) return /\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);
-                            if (_.hb) return /WebKit\/(\S+)/.exec(a);
-                            if (_.db) return /(?:Version)[ \/]?(\S+)/.exec(a)
-                        }();pb && (ob = pb ? pb[1] : "");
-                    if (_.B) {
-                        var qb = mb();
-                        if (null != qb && qb > (0, window.parseFloat)(ob)) {
-                            nb = String(qb);
-                            break a
-                        }
-                    }
-                    nb = ob
-                }
-                _.rb = nb;
-                bb = {};
-                _.C = function(a) {
-                    return cb(a, function() {
-                        return 0 <= _.ya(_.rb, a)
-                    })
-                };
-                _.tb = function(a) {
-                    return Number(sb) >= a
-                };
-                var vb = _.m.document;
-                ub = vb && _.B ? mb() || ("CSS1Compat" == vb.compatMode ? (0, window.parseInt)(_.rb, 10) : 5) : void 0;
-                var sb = ub;
-                _.wb = _.A("Firefox");
-                _.xb = _.Za() || _.A("iPod");
-                _.yb = _.A("iPad");
-                _.zb = _.A("Android") && !(Ya() || _.A("Firefox") || _.A("Opera") || _.A("Silk"));
-                _.Ab = Ya();
-                _.Bb = _.A("Safari") && !(Ya() || _.A("Coast") || _.A("Opera") || _.A("Edge") || _.A("Silk") || _.A("Android")) && !_.$a();
-                var Cb = null;
-                var Db;
-                _.Eb = function(a, c) {
-                    return (new Db(c)).o(a)
-                };
-                Db = function(a) {
-                    this.b = a
-                };
-                Db.prototype.o = function(a) {
-                    var c = [];
-                    Fb(this, a, c);
-                    return c.join("")
-                };
-                var Fb = function(a, c, d) {
-                        if (null == c) d.push("null");
-                        else {
-                            if ("object" == typeof c) {
-                                if (_.na(c)) {
-                                    var e = c;
-                                    c = e.length;
-                                    d.push("[");
-                                    for (var f = "", g = 0; g < c; g++) d.push(f), f = e[g], Fb(a, a.b ? a.b.call(e, String(g), f) : f, d), f = ",";
-                                    d.push("]");
-                                    return
-                                }
-                                if (c instanceof String || c instanceof Number || c instanceof Boolean) c = c.valueOf();
-                                else {
-                                    d.push("{");
-                                    g = "";
-                                    for (e in c) Object.prototype.hasOwnProperty.call(c, e) && (f = c[e], "function" != typeof f && (d.push(g), Gb(e, d), d.push(":"), Fb(a, a.b ? a.b.call(c, e, f) : f, d), g = ","));
-                                    d.push("}");
-                                    return
-                                }
-                            }
-                            switch (typeof c) {
-                                case "string":
-                                    Gb(c,
-                                        d);
-                                    break;
-                                case "number":
-                                    d.push((0, window.isFinite)(c) && !(0, window.isNaN)(c) ? String(c) : "null");
-                                    break;
-                                case "boolean":
-                                    d.push(String(c));
-                                    break;
-                                case "function":
-                                    d.push("null");
-                                    break;
-                                default:
-                                    throw Error("e`" + typeof c);
-                            }
-                        }
-                    },
-                    Hb = {
-                        '"': '\\"',
-                        "\\": "\\\\",
-                        "/": "\\/",
-                        "\b": "\\b",
-                        "\f": "\\f",
-                        "\n": "\\n",
-                        "\r": "\\r",
-                        "\t": "\\t",
-                        "\x0B": "\\u000b"
-                    },
-                    Ib = /\uffff/.test("￿") ? /[\\\"\x00-\x1f\x7f-\uffff]/g : /[\\\"\x00-\x1f\x7f-\xff]/g,
-                    Gb = function(a, c) {
-                        c.push('"', a.replace(Ib, function(a) {
-                            var c = Hb[a];
-                            c || (c = "\\u" + (a.charCodeAt(0) | 65536).toString(16).substr(1), Hb[a] = c);
-                            return c
-                        }), '"')
-                    };
-                var Jb, Lb, Pb;
-                _.D = function() {};
-                Jb = "function" == typeof window.Uint8Array;
-                _.E = function(a, c, d, e, f) {
-                    a.b = null;
-                    c || (c = d ? [d] : []);
-                    a.ea = d ? String(d) : void 0;
-                    a.D = 0 === d ? -1 : 0;
-                    a.w = c;
-                    a: {
-                        if (a.w.length && (c = a.w.length - 1, (d = a.w[c]) && "object" == typeof d && !_.na(d) && !(Jb && d instanceof window.Uint8Array))) {
-                            a.C = c - a.D;
-                            a.A = d;
-                            break a
-                        } - 1 < e ? (a.C = e, a.A = null) : a.C = Number.MAX_VALUE
-                    }
-                    a.G = {};
-                    if (f)
-                        for (e = 0; e < f.length; e++) c = f[e], c < a.C ? (c += a.D, a.w[c] = a.w[c] || _.Kb) : a.A[c] = a.A[c] || _.Kb
-                };
-                _.Kb = [];
-                _.F = function(a, c) {
-                    if (c < a.C) {
-                        c += a.D;
-                        var d = a.w[c];
-                        return d === _.Kb ? a.w[c] = [] : d
-                    }
-                    d = a.A[c];
-                    return d === _.Kb ? a.A[c] = [] : d
-                };
-                _.G = function(a, c, d) {
-                    a = _.F(a, c);
-                    return null == a ? d : a
-                };
-                _.I = function(a, c, d) {
-                    a.b || (a.b = {});
-                    if (!a.b[d]) {
-                        var e = _.F(a, d);
-                        e && (a.b[d] = new c(e))
-                    }
-                    return a.b[d]
-                };
-                Lb = function(a) {
-                    if (a.b)
-                        for (var c in a.b) {
-                            var d = a.b[c];
-                            if (_.na(d))
-                                for (var e = 0; e < d.length; e++) d[e] && d[e].Qa();
-                            else d && d.Qa()
-                        }
-                };
-                _.D.prototype.Qa = function() {
-                    Lb(this);
-                    return this.w
-                };
-                var Mb = _.m.JSON && _.m.JSON.stringify || "object" === typeof JSON && JSON.stringify;
-                _.D.prototype.o = Jb ? function() {
-                    var a = window.Uint8Array.prototype.toJSON;
-                    window.Uint8Array.prototype.toJSON = function() {
-                        if (!Cb) {
-                            Cb = {};
-                            for (var a = 0; 65 > a; a++) Cb[a] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(a)
-                        }
-                        for (var a = Cb, c = [], f = 0; f < this.length; f += 3) {
-                            var g = this[f],
-                                h = f + 1 < this.length,
-                                l = h ? this[f + 1] : 0,
-                                q = f + 2 < this.length,
-                                r = q ? this[f + 2] : 0,
-                                v = g >> 2,
-                                g = (g & 3) << 4 | l >> 4,
-                                l = (l & 15) << 2 | r >> 6,
-                                r = r & 63;
-                            q || (r = 64, h || (l = 64));
-                            c.push(a[v], a[g], a[l], a[r])
-                        }
-                        return c.join("")
-                    };
-                    try {
-                        var c = Mb.call(null, this.Qa(),
-                            Nb)
-                    }
-                    finally {
-                        window.Uint8Array.prototype.toJSON = a
-                    }
-                    return c
-                } : Mb ? function() {
-                    return Mb.call(null, this.Qa(), Nb)
-                } : function() {
-                    return _.Eb(this.Qa(), Nb)
-                };
-                var Nb = function(a, c) {
-                    if (_.oa(c)) {
-                        if ((0, window.isNaN)(c)) return "NaN";
-                        if (window.Infinity === c) return "Infinity";
-                        if (-window.Infinity === c) return "-Infinity"
-                    }
-                    return c
-                };
-                _.D.prototype.toString = function() {
-                    Lb(this);
-                    return this.w.toString()
-                };
-                _.D.prototype.clone = function() {
-                    return _.Ob(this)
-                };
-                _.Ob = function(a) {
-                    return new a.constructor(Pb(a.Qa()))
-                };
-                Pb = function(a) {
-                    var c;
-                    if (_.na(a)) {
-                        for (var d = Array(a.length), e = 0; e < a.length; e++) null != (c = a[e]) && (d[e] = "object" == typeof c ? Pb(c) : c);
-                        return d
-                    }
-                    if (Jb && a instanceof window.Uint8Array) return new window.Uint8Array(a);
-                    d = {};
-                    for (e in a) null != (c = a[e]) && (d[e] = "object" == typeof c ? Pb(c) : c);
-                    return d
-                };
-                _.Qb = function(a) {
-                    _.E(this, a, 0, -1, null)
-                };
-                _.y(_.Qb, _.D);
-                _.J = function(a, c) {
-                    return null != a ? !!a : !!c
-                };
-                _.K = function(a, c) {
-                    void 0 == c && (c = "");
-                    return null != a ? a : c
-                };
-                _.L = function(a, c) {
-                    void 0 == c && (c = 0);
-                    return null != a ? a : c
-                };
-                var Rb = function(a) {
-                    _.E(this, a, 0, -1, null)
-                };
-                _.y(Rb, _.D);
-                _.Sb = function(a) {
-                    _.E(this, a, 0, -1, null)
-                };
-                _.y(_.Sb, _.D);
-                var Tb = function(a) {
-                    _.E(this, a, 0, -1, null)
-                };
-                _.y(Tb, _.D);
-                Tb.prototype.jd = function() {
-                    return _.I(this, _.Sb, 14)
-                };
-                var Ub = new Tb(window.gbar && window.gbar._CONFIG ? window.gbar._CONFIG[0] : [
-                        [, , , , , , , []],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        []
-                    ]),
-                    Vb;
-                Vb = _.F(Ub, 3);
-                _.Wb = _.J(Vb);
-                _.Xb = function() {};
-                _.x("gbar_._DumpException", function(a) {
-                    if (_.Wb) throw a;
-                    _.Xb(a)
-                });
-                var Yb = function() {
-                    _.z.call(this);
-                    this.xh = Ub
-                };
-                _.y(Yb, _.z);
-                _.Ia(Yb, "cs");
-                _.M = function() {
-                    return Yb.V().xh
-                };
-                _.Zb = function() {
-                    return _.I(_.M(), Rb, 1) || new Rb
-                };
-                _.Ka("cs", new Yb);
-                var $b = new function() {
-                    this.b = _.I(_.Zb(), _.Qb, 8) || new _.Qb
-                };
-                _.x("gbar.bv", {
-                    n: _.L(_.F($b.b, 2)),
-                    r: _.K(_.F($b.b, 4)),
-                    f: _.K(_.F($b.b, 3)),
-                    e: _.K(_.F($b.b, 5)),
-                    m: _.L(_.G($b.b, 1, 1), 1)
-                });
-                _.x("gbar.kn", function() {
-                    return !0
-                });
-                _.x("gbar.sb", function() {
-                    return !1
-                });
-                _.bc = function() {
-                    this.b = "";
-                    this.o = _.ac
-                };
-                _.bc.prototype.ub = !0;
-                _.bc.prototype.bb = function() {
-                    return this.b
-                };
-                _.bc.prototype.toString = function() {
-                    return "Const{" + this.b + "}"
-                };
-                _.ac = {};
-                _.cc = function(a) {
-                    var c = new _.bc;
-                    c.b = a;
-                    return c
-                };
-                _.cc("");
-                _.ec = function() {
-                    this.b = "";
-                    this.o = _.dc
-                };
-                _.ec.prototype.ub = !0;
-                _.dc = {};
-                _.ec.prototype.bb = function() {
-                    return this.b
-                };
-                _.fc = function(a) {
-                    var c = new _.ec;
-                    c.b = a;
-                    return c
-                };
-                _.gc = _.fc("");
-                _.ic = function() {
-                    this.b = "";
-                    this.o = _.hc
-                };
-                _.ic.prototype.ub = !0;
-                _.ic.prototype.bb = function() {
-                    return this.b
-                };
-                _.ic.prototype.vd = !0;
-                _.ic.prototype.Kb = function() {
-                    return 1
-                };
-                _.hc = {};
-                _.jc = function(a) {
-                    var c = new _.ic;
-                    c.b = a;
-                    return c
-                };
-                _.jc("about:blank");
-                _.kc = !_.B || _.tb(9);
-                _.lc = !_.gb && !_.B || _.B && _.tb(9) || _.gb && _.C("1.9.1");
-                _.mc = _.B && !_.C("9");
-                _.nc = _.B || _.db || _.hb;
-                _.pc = function() {
-                    this.b = "";
-                    this.w = _.oc;
-                    this.o = null
-                };
-                _.pc.prototype.vd = !0;
-                _.pc.prototype.Kb = function() {
-                    return this.o
-                };
-                _.pc.prototype.ub = !0;
-                _.pc.prototype.bb = function() {
-                    return this.b
-                };
-                _.oc = {};
-                _.qc = function(a, c) {
-                    var d = new _.pc;
-                    d.b = a;
-                    d.o = c;
-                    return d
-                };
-                _.qc("<!DOCTYPE html>", 0);
-                _.rc = _.qc("", 0);
-                _.sc = _.qc("<br>", 0);
 
-            }
-            catch (e) {
-                _._DumpException(e)
-            }
-            /* _Module_:in */
-            try {
-                _.x("gbar.elr", function() {
-                    return {
-                        es: {
-                            f: 152,
-                            h: 60,
-                            m: 30
-                        },
-                        mo: "md",
-                        vh: window.innerHeight || 0,
-                        vw: window.innerWidth || 0
-                    }
-                });
-            }
-            catch (e) {
-                _._DumpException(e)
-            }
-            /* _GlobalSuffix_ */
-        })(this.gbar_);
-        // Google Inc.
-    </script>
-    <link href="https://www.google.ru/?ei=nCPRWPy-CJTBNOXxq5gH" rel="canonical">
-    <script async="" type="text/javascript" charset="UTF-8" src="./Google_files/rs=AA2YrTt5ren-o13eDnGlBE89XG5bv_gcdw"></script>
     <style type="text/css">
         .gsri_a {
             background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR42u2Xz2sTQRSAX8VSb1K8iNqKooJH2Ux6Ksn+iPQqxZMIehJB0do/IMhmQWsvHr2KSEGk0tSLIoWIYNUKij20F2/N7iaUZnYT0kYzzhMKs0HDJiTdLcwHDwKZSd63781LBiQSSW9JZdkhzfKm1Rz9mjZp/W9YdEU3vXv4HsQZ40FtNG36q5rls//Ej4tmbSS2T15Mvp3ExOPmEMQNbBtMMEyoljcFcQN7PqyAlqNfIG7gYQ0tYNIaxA1MrJPY3wImbUqBKAXSFv0tBSIVMOkvKRDtGKWN/T6FdqRAxFNoWwpEPIXqUqBT6ALU/UVgu8GW4GD3f6f9TRDYNJTDrk7YbtiqUumHwIYoUJuHERDAS0r4CvgFECgbY+cFAR7KT+g1POmCKFDNw6WggHc3fBtVb4CAoyauBgXIG+g1Xh5mRAGah6cggBd11fK/h7lOprIs0H6uRl6KAo5O7kOv4QmPiwJ4Jqqv4FiwCtXjvD2+tRmfK6kZ/ygI2HritK0rDVGgrClJ6DWMwYC/AGuCBMYcIC2V0CzvjmbRz3j3xUjn6CfeYreUJ2wQkGD75INPX1mFfsEFrrcIYCvdhC4paWQakxajpJMr0C9YFg54i7AsClRmh9/xnr0NHcInzZStk2aLwAcGMAD9pPIazvFKVDD5rdnhJeHLX5RTyRPQHpz5o66emMc9wdlPtvA8wF7Aq2BUHh1525qEo5JtR1WeOXpickO9cJIpyuD6xJmhYiZ5ytWSl3mlnuOaf+2zDaLDXmJrSgZ/MYVEugo+gSh+FkSBa4yd5Ul87DZ5XpFl/AyIEjzYjkau8WqshU2cr13HPbgX4gJOD97n465GZlyVvC9mSKloKI2iTnbwNT+gBX54H+IaXAtxJzE3ycSAFqSAFJACUkAikXD+AHj5/wx2o5osAAAAAElFTkSuQmCC) no-repeat -3px 0;
@@ -5267,7 +3876,7 @@
     </style>
 </head>
 
-<body class="hp vasq" onload="try{if(!google.j.b){document.f&amp;&amp;document.f.q.focus();document.gbqf&amp;&amp;document.gbqf.q.focus();}}catch(e){}if(document.images)new Image().src=&#39;/images/nav_logo242.png&#39;" id="gsr">
+<body class="hp vasq" id="gsr">
     <div class="ctr-p" id="viewport">
         <div data-jiis="cc" id="doc-info"></div>
         <div data-jiis="cc" id="cst">
@@ -5866,210 +4475,195 @@
                     }
                 }
             </style>
-        </div> <a href="https://www.google.ru/setprefs?suggon=2&amp;prev=https://www.google.ru/?gfe_rd%3Dcr%26ei%3DnCPRWPy-CJTBNOXxq5gH&amp;sig=0_yaarVav_zUNjt-HlzWj6V1zY0r4%3D" style="left:-1000em;position:absolute">Screen-reader users, click here to turn off Google Instant.</a>        <textarea name="csi" id="csi" style="display:none"></textarea>
-        <script>
-            if (google.j.b) document.body.style.visibility = 'hidden';
-        </script>
-        <style>
-            @media only screen and (max-width:580px) {
-                #gb div {
-                    display: none
-                }
-            }
-        </style>
-        <div class="jhp big" id="searchform">
-            <script>
-                (function() {
-                    var _j = 1280;
-                    try {
-                        var s = document.getElementById('searchform');
-                        var w = document['body'] && document.body['offsetWidth'];
-                        if (s && w && w >= _j) {
-                            s.className += ' big';
-                        }
-                    }
-                    catch (e) {}
-                })();
-            </script>
+
+
             <style>
-                #gb {
-                    font-size: 13px
-                }
-                
-                #gb {
-                    position: relative;
-                    top: 8px
-                }
-                
-                div#searchform {
-                    min-width: 980px;
-                    z-index: 103
-                }
-                
-                div.sfbg,
-                div.sfbgg {
-                    height: 65px
-                }
-                
-                .sfbgx {
-                    background-color: #fafafa;
-                    border-bottom: 1px solid #ebebeb;
-                    height: 85px;
-                    position: absolute;
-                    width: 100%
-                }
-                
-                .hp .sfbgx {
-                    display: none
-                }
-                
-                .big form#tsf,
-                form#tsf {
-                    width: auto;
-                    max-width: 784px;
-                    overflow: hidden
-                }
-                
-                #searchform.big>#tsf {
-                    max-width: 784px
-                }
-                
-                .big div.tsf-p,
-                form>div.tsf-p {
-                    margin: -1px 0 0;
-                    padding-right: 0
-                }
-                
-                div#viewport {
-                    position: absolute;
-                    top: 0;
-                    width: 100%
-                }
-                
-                div#searchform.jhp {
-                    margin-top: 0
-                }
-                
-                #searchform.big.jhp>#tsf {
-                    max-width: none
-                }
-                
-                .jhp>#gb {
-                    position: absolute;
-                    top: -295px;
-                    right: 0;
-                    width: 100%
-                }
-                
-                .jhp>#tsf {
-                    max-width: none
+                @media only screen and (max-width:580px) {
+                    #gb div {
+                        display: none
+                    }
                 }
             </style>
-            <div id="gb" class="gb_T">
+            <div class="jhp big" id="searchform">
+                <style>
+                    #gb {
+                        font-size: 13px
+                    }
+                    
+                    #gb {
+                        position: relative;
+                        top: 8px
+                    }
+                    
+                    div#searchform {
+                        min-width: 980px;
+                        z-index: 103
+                    }
+                    
+                    div.sfbg,
+                    div.sfbgg {
+                        height: 65px
+                    }
+                    
+                    .sfbgx {
+                        background-color: #fafafa;
+                        border-bottom: 1px solid #ebebeb;
+                        height: 85px;
+                        position: absolute;
+                        width: 100%
+                    }
+                    
+                    .hp .sfbgx {
+                        display: none
+                    }
+                    
+                    .big form#tsf,
+                    form#tsf {
+                        width: auto;
+                        max-width: 784px;
+                        overflow: hidden
+                    }
+                    
+                    #searchform.big>#tsf {
+                        max-width: 784px
+                    }
+                    
+                    .big div.tsf-p,
+                    form>div.tsf-p {
+                        margin: -1px 0 0;
+                        padding-right: 0
+                    }
+                    
+                    div#viewport {
+                        position: absolute;
+                        top: 0;
+                        width: 100%
+                    }
+                    
+                    div#searchform.jhp {
+                        margin-top: 0
+                    }
+                    
+                    #searchform.big.jhp>#tsf {
+                        max-width: none
+                    }
+                    
+                    .jhp>#gb {
+                        position: absolute;
+                        top: -295px;
+                        right: 0;
+                        width: 100%
+                    }
+                    
+                    .jhp>#tsf {
+                        max-width: none
+                    }
+                </style>
+                <div id="gb" class="gb_T">
 
-        </div>
-        <div class="sfbg nojsv" style="margin-top:-20px">
-            <div class="sfbgg"></div>
-        </div>
-        <form class="tsf" action="https://www.google.ru/search" style="overflow:visible" id="tsf" method="GET" name="f" onsubmit="return q.value!=&#39;&#39;" role="search"><input value="psy-ab" name="sclient" type="hidden">
-            <div data-jibp="" data-jiis="uc" id="tophf"><input name="newwindow" value="1" type="hidden"><input name="site" value="" type="hidden"><input name="source" type="hidden" value="hp"></div>
-            <div class="tsf-p">
-                <div class="nojsv logocont" id="logocont">
-                    <h1>
-                        <a href="https://www.google.ru/webhp?hl=en&amp;sa=X&amp;ved=0ahUKEwjplP-s0-fSAhXKhiwKHfDwDosQPAgD" title="Go to Google Home" id="logo" data-hveid="3"><img src="./Google_files/googlelogo_color_120x44dp.png" alt="Google" height="44" width="120" onload="google.aft&amp;&amp;google.aft(this)"></a>
-                    </h1>
                 </div>
-                <div class="sfibbbc">
-                    <div class="sbtc" id="sbtc">
-                        <div class="sbibtd">
-                            <div class="nojsv sfopt" id="sfopt">
-                                <div class="lsd">
-                                    <div id="ss-bar" style="white-space:nowrap;z-index:98" data-jiis="uc"></div>
-                                </div>
-                            </div>
-                            <div class="sfsbc">
-                                <div class="nojsb"> </div>
-                            </div>
-                            <div class="sbibod " id="sfdiv"><button class="sbico-c" value="Search" aria-label="Google Search" id="_fZl" name="btnG" type="submit"><span class="sbico _wtf _Qtf"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></button>
-                                <div
-                                    class="lst-c">
-                                    <div class="gstl_0 sbib_a" style="height: 44px;">
-                                        <div class="sbib_d" id="sb_chc0" dir="ltr"></div>
-                                        <div class="gsst_b sbib_c" id="gs_st0" dir="ltr" style="line-height: 44px;"><a class="gsst_a" href="javascript:void(0)" aria-label="Search by voice"><span class="gsri_a" id="gsri_ok0"></span></a>
-                                            <div id="chmo">
-                                                <div id="chm">
-                                                    <div class="chmp">
-                                                        <div class="chmpi chmp"></div>
+                <div class="sfbg nojsv" style="margin-top:-20px">
+                    <div class="sfbgg"></div>
+                </div>
+                <form class="tsf" action="https://www.google.ru/search" style="overflow:visible" id="tsf" method="GET" name="f" onsubmit="return q.value!=&#39;&#39;" role="search"><input value="psy-ab" name="sclient" type="hidden">
+                    <div data-jibp="" data-jiis="uc" id="tophf"><input name="newwindow" value="1" type="hidden"><input name="site" value="" type="hidden"><input name="source" type="hidden" value="hp"></div>
+                    <div class="tsf-p">
+                        <div class="nojsv logocont" id="logocont">
+                            <h1>
+                                <a href="https://www.google.ru/webhp?hl=en&amp;sa=X&amp;ved=0ahUKEwjplP-s0-fSAhXKhiwKHfDwDosQPAgD" title="Go to Google Home" id="logo" data-hveid="3"><img src="./Google_files/googlelogo_color_120x44dp.png" alt="Google" height="44" width="120" onload="google.aft&amp;&amp;google.aft(this)"></a>
+                            </h1>
+                        </div>
+                        <div class="sfibbbc">
+                            <div class="sbtc" id="sbtc">
+                                <div class="sbibtd">
+                                    <div class="nojsv sfopt" id="sfopt">
+                                        <div class="lsd">
+                                            <div id="ss-bar" style="white-space:nowrap;z-index:98" data-jiis="uc"></div>
+                                        </div>
+                                    </div>
+                                    <div class="sfsbc">
+                                        <div class="nojsb"> </div>
+                                    </div>
+                                    <div class="sbibod " id="sfdiv"><button class="sbico-c" value="Search" aria-label="Google Search" id="_fZl" name="btnG" type="submit"><span class="sbico _wtf _Qtf"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></button>
+                                        <div class="lst-c">
+                                            <div class="gstl_0 sbib_a" style="height: 44px;">
+                                                <div class="sbib_d" id="sb_chc0" dir="ltr"></div>
+                                                <div class="gsst_b sbib_c" id="gs_st0" dir="ltr" style="line-height: 44px;"><a class="gsst_a" href="javascript:void(0)" aria-label="Search by voice"><span class="gsri_a" id="gsri_ok0"></span></a>
+                                                    <div id="chmo">
+                                                        <div id="chm">
+                                                            <div class="chmp">
+                                                                <div class="chmpi chmp"></div>
+                                                            </div>
+                                                            <div style="display: none;">
+                                                                <div class="chma"></div>
+                                                                <div>Not listening. Something went wrong.</div>
+                                                                <div><a>Restart listening</a><a style="padding-left: 10px;">Help</a></div>
+                                                            </div>
+                                                            <div style="display: none;">Hotword detection is off.
+                                                                <div><a>Start listening for "Ok Google"</a></div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div style="display: none;">
-                                                        <div class="chma"></div>
-                                                        <div>Not listening. Something went wrong.</div>
-                                                        <div><a>Restart listening</a><a style="padding-left: 10px;">Help</a></div>
-                                                    </div>
-                                                    <div style="display: none;">Hotword detection is off.
-                                                        <div><a>Start listening for "Ok Google"</a></div>
-                                                    </div>
+                                                </div>
+                                                <div class="sbib_b" id="sb_ifc0" dir="ltr">
+                                                    <div id="gs_lc0" style="position: relative;">
+
+
+                                                        <!-- Main search --->
+                                                        <input class="gsfi" maxlength="2048" name="q" autocomplete="off" title="Search" type="text" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false" style="border: none; padding: 0px; margin: 0px; height: auto; width: 100%; background: url(&quot;data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D&quot;) transparent; position: absolute; z-index: 6; left: 0px; outline: none;">
+                                                        <!-- Main search --->
+                                                        <div class="gsfi" id="gs_sc0" style="background: transparent; color: transparent; padding: 0px; position: absolute; z-index: 2; white-space: pre; visibility: hidden;"></div><input class="gsfi" disabled="" autocomplete="off" autocapitalize="off" aria-hidden="true" id="gs_taif0" dir="ltr" style="border: none; padding: 0px; margin: 0px; height: auto; width: 100%; position: absolute; z-index: 1; background-color: transparent; -webkit-text-fill-color: silver; color: silver; left: 0px; visibility: hidden;">
+                                                        <input class="gsfi" disabled="" autocomplete="off" autocapitalize="off" aria-hidden="true" id="gs_htif0" dir="ltr" style="border: none; padding: 0px; margin: 0px; height: auto; width: 100%; position: absolute; z-index: 1; background-color: transparent; -webkit-text-fill-color: silver; color: silver; transition: all 0.218s; opacity: 0; text-align: left; left: 0px;"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="sbib_b" id="sb_ifc0" dir="ltr">
-                                            <div id="gs_lc0" style="position: relative;">
-                                                
-                                                
-                                                <!-- Main search --->
-                                                <input class="gsfi" maxlength="2048" name="q" autocomplete="off" title="Search" type="text" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false"
-                                                    style="border: none; padding: 0px; margin: 0px; height: auto; width: 100%; background: url(&quot;data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D&quot;) transparent; position: absolute; z-index: 6; left: 0px; outline: none;">
-                                                <!-- Main search --->
-                                                <div
-                                                    class="gsfi" id="gs_sc0" style="background: transparent; color: transparent; padding: 0px; position: absolute; z-index: 2; white-space: pre; visibility: hidden;"></div><input class="gsfi" disabled="" autocomplete="off" autocapitalize="off" aria-hidden="true" id="gs_taif0" dir="ltr" style="border: none; padding: 0px; margin: 0px; height: auto; width: 100%; position: absolute; z-index: 1; background-color: transparent; -webkit-text-fill-color: silver; color: silver; left: 0px; visibility: hidden;">
-                                            <input
-                                                class="gsfi" disabled="" autocomplete="off" autocapitalize="off" aria-hidden="true" id="gs_htif0" dir="ltr" style="border: none; padding: 0px; margin: 0px; height: auto; width: 100%; position: absolute; z-index: 1; background-color: transparent; -webkit-text-fill-color: silver; color: silver; transition: all 0.218s; opacity: 0; text-align: left; left: 0px;"></div>
                                     </div>
+                                </div>
+
                             </div>
+                            <div></div>
+                        </div>
+                        <div class="jsb" style="">
+                            <!-- Main search submit -->
+                            <!--<gcse:search></gcse:search>-->
+                            <div id="test"></div>
+                            <center>
+                                <input value="Google Search" aria-label="Google Search" name="btnK" type="submit">
+                                <input value="I&#39;m Feeling Lucky" aria-label="I&#39;m Feeling Lucky" name="btnI" type="submit" jsaction="sf.lck">
+                            </center>
+                            <!-- Main search submit -->
                         </div>
                     </div>
-                </div>
-
+                    <input type="hidden" name="oq">
+                    <input type="hidden" name="gs_l"><input type="hidden" name="pbx" value="1">
+                </form>
             </div>
-            <div></div>
-    </div>
-    <div class="jsb" style="">
-        <!-- Main search submit -->
-        <gcse:search></gcse:search>
-        <center>
-            <input value="Google Search" aria-label="Google Search" name="btnK" type="submit">
-            <input value="I&#39;m Feeling Lucky" aria-label="I&#39;m Feeling Lucky" name="btnI" type="submit" jsaction="sf.lck">
-        </center>
-        <!-- Main search submit -->
-    </div>
-    </div>
-    <input type="hidden" name="oq">
-    <input type="hidden" name="gs_l"><input type="hidden" name="pbx" value="1">
-    </form>
-    </div>
-    <div class="sfbgx"></div>
-    <div id="gac_scont"></div>
-    <div class="spch s2fp-h" style="display:none" id="spch">
-        <div class="spchc" id="spchc">
-            <div class="_o3">
-                <div class="_AM"><span class="_CMb" id="spchl"></span><span class="button" id="spchb"><div class="_wPb"><span class="_AUb"></span>
-                    <div class="_Fjd"><span class="_oXb"></span><span class="_dWb"></span></div>
+            <div class="sfbgx"></div>
+            <div id="gac_scont"></div>
+            <div class="spch s2fp-h" style="display:none" id="spch">
+                <div class="spchc" id="spchc">
+                    <div class="_o3">
+                        <div class="_AM"><span class="_CMb" id="spchl"></span><span class="button" id="spchb"><div class="_wPb"><span class="_AUb"></span>
+                            <div class="_Fjd"><span class="_oXb"></span><span class="_dWb"></span></div>
+                        </div>
+                        </span>
+                    </div>
+                    <div class="_gjb"><span class="spcht" id="spchi" style="color:#777"></span><span class="spcht" id="spchf" style="color:#000"></span></div>
+                    <div class="google-logo"></div>
                 </div>
-                </span>
+                <div class="_ypc">
+                    <div class="_zpc"></div>
+                </div>
             </div>
-            <div class="_gjb"><span class="spcht" id="spchi" style="color:#777"></span><span class="spcht" id="spchf" style="color:#000"></span></div>
-            <div class="google-logo"></div>
+            <div class="close-button" id="spchx">×</div>
         </div>
-        <div class="_ypc">
-            <div class="_zpc"></div>
-        </div>
-    </div>
-    <div class="close-button" id="spchx">×</div>
-    </div>
-    <div style="display:none" jsl="$t t-orNZyHXTT74;$x 0;" class="r-inPG8tmm665U"></div>
-    <div class="content" data-jiis="cc" id="main"><span class="ctr-p" id="body"><center><div style="height:233px;margin-top:89px" id="lga"><div style="padding-top:109px"><style>#hplogo{background:url(./images/googlelogo_color_272x92dp.png) no-repeat}@media (-webkit-max-device-pixel-ratio:1),(max-resolution:96dpi){#hplogo{background:url(./images/googlelogo_color_272x92dp.png) no-repeat}}</style><div style="background-size:272px 92px;height:92px;width:272px" title="Google" align="left" id="hplogo" onload="window.lol&amp;&amp;lol()"></div></div></div><div style="height:118px"></div><div data-jibp="h" data-jiis="uc" id="prm-pt" style="margin-top:12px"><style>#als{font-size:small;margin-bottom:24px}#_eEe{display:inline-block;line-height:28px;}#_eEe a{padding:0 3px;}._lEe{display:inline-block;margin:0 2px;white-space:nowrap}._PEe{display:inline-block;margin:0 2px}</style><script>window.gbar&&gbar.up&&gbar.up.tp&&gbar.up.tp();</script><div id="als"></div><div id="swml"></div></div></center></span>
-        <div
-            class="ctr-p" id="footer">
+        <div style="display:none" jsl="$t t-orNZyHXTT74;$x 0;" class="r-inPG8tmm665U"></div>
+        <div class="content" data-jiis="cc" id="main"><span class="ctr-p" id="body">
+            <center>
+            <div style="height:233px;margin-top:89px" id="lga">
+                <div style="padding-top:109px"><style>#hplogo{background:url(./images/googlelogo_color_272x92dp.png) no-repeat}@media (-webkit-max-device-pixel-ratio:1),(max-resolution:96dpi){#hplogo{background:url(./images/googlelogo_color_272x92dp.png) no-repeat}}</style><div style="background-size:272px 92px;height:92px;width:272px" title="Google" align="left" id="hplogo" onload="window.lol&amp;&amp;lol()"></div></div></div><div style="height:118px"></div><div data-jibp="h" data-jiis="uc" id="prm-pt" style="margin-top:12px">
+                
+        <div class="ctr-p" id="footer">
             <div data-jibp="h" data-jiis="uc" id="fbarcnt" style="height: auto; visibility: visible;">
                 <style>
                     .fmulti {}
@@ -6277,14 +4871,34 @@
                 </style>
                 <div id="footcnt">
                     <div class="_dQc _E2" id="fbar">
-                        <!--<div class="fbar"> <span id="fsr">  <a class="_Gs" href="https://www.google.ru/intl/en/policies/privacy/?fg=1">Privacy</a> <a class="_Gs" href="https://www.google.ru/intl/en/policies/terms/?fg=1">Terms</a>    <span style="display:inline-block;position:relative"> <a class="_Gs" href="https://www.google.ru/preferences?hl=en" id="fsettl" aria-controls="fsett" aria-expanded="false" role="button" jsaction="foot.cst">Settings</a> <span id="fsett" style="display:none"> <a href="https://www.google.ru/preferences?hl=en-RU&amp;fg=1">Search settings</a> <span data-jibp="h" data-jiis="uc" id="advsl"> <a href="https://www.google.ru/advanced_search?hl=en-RU&amp;fg=1">Advanced search</a> </span>                            <a href="https://www.google.ru/history/optout?hl=en-RU&amp;fg=1">  History </a> <a href="https://support.google.com/websearch/?p=ws_results_help&amp;hl=en-RU&amp;fg=1">Search Help</a> <a href="javascript:void(0)" data-bucket="websearch"-->
-                        <!--        id="_Yvd" target="_blank" jsaction="gf.sf" data-ved="0ahUKEwjplP-s0-fSAhXKhiwKHfDwDosQLggN">  Send feedback </a> </span>-->
-                        <!--    </span> <a class="_Gs" href="https://www.google.com/?gfe_rd=cr&amp;ei=nCPRWPy-CJTBNOXxq5gH&amp;gws_rd=cr&amp;fg=1">Use Google.com</a> </span> <span id="fsl"> <a class="_Gs" href="https://www.google.ru/intl/en/ads/?fg=1">Advertising</a> <a class="_Gs" href="https://www.google.ru/services/?fg=1">Business</a> <a class="_Gs" href="https://www.google.ru/intl/en/about.html?fg=1">About</a> </span>                            </div>-->
-                    </div>
-                </div>
-            </div>
+                        <!--<div class="fbar"> <span id="fsr">  <a class="_Gs" href="https://www.google.ru/intl/en/policies/privacy/?fg=1">Privacy</a> <a class="_Gs" href="https://www.google.ru/intl/en/policies/terms/?fg=1">Terms</a>    <span style="display:inline-block;position:relative"> <a class="_Gs" href="https://www.google.ru/preferences?hl=en" id="fsettl" aria-controls="fsett" aria-expanded="false" role="button" jsaction="foot.cst">Settings</a> <span id="fsett" style="display:none"> <a href="https://www.google.ru/preferences?hl=en-RU&amp;fg=1">Search settings</a> <span data-jibp="h" data-jiis="uc" id="advsl"> <a href="https://www.google.ru/advanced_search?hl=en-RU&amp;fg=1">Advanced search</a> </span>            <a href="https://www.google.ru/history/optout?hl=en-RU&amp;fg=1">  History </a> <a href="https://support.google.com/websearch/?p=ws_results_help&amp;hl=en-RU&amp;fg=1">Search Help</a>
+            <a href="javascript:void(0)" data-bucket="websearch" -->
+                <!--        id="_Yvd" target="_blank" jsaction="gf.sf" data-ved="0ahUKEwjplP-s0-fSAhXKhiwKHfDwDosQLggN">  Send feedback </a> </span>-->
+                <!--    </span> <a class="_Gs" href="https://www.google.com/?gfe_rd=cr&amp;ei=nCPRWPy-CJTBNOXxq5gH&amp;gws_rd=cr&amp;fg=1">Use Google.com</a> </span> <span id="fsl"> <a class="_Gs" href="https://www.google.ru/intl/en/ads/?fg=1">Advertising</a> <a class="_Gs" href="https://www.google.ru/services/?fg=1">Business</a> <a class="_Gs" href="https://www.google.ru/intl/en/about.html?fg=1">About</a> </span>                            </div>-->
+        </div>
     </div>
- 
+    </div>
+    </div>
+
+
+    <script>
+        setTimeout(function() {
+            document.querySelector('input.gsc-input').setAttribute('placeholder', '');
+            var btn = document.querySelector('.gsc-search-button.gsc-search-button-v2');
+            btn.setAttribute('src', './images/gs_blue.png');
+            btn.style.background = 'none';
+            btn.style.border = 'none';
+            btn.style.height = '24px';
+            btn.style.width = '24px';
+            document.getElementById('gsc-iw-id1').style.height = '34px';
+            document.getElementById('gsc-iw-id1').style.marginLeft = '15px';
+            document.getElementById('gsc-iw-id1').style.marginRight = '-53px';
+            document.getElementById('gsc-i-id1').style.backgroundImage = 'none';
+            document.getElementById('gsc-i-id1').style.backgroundPosition = '-200px 0';
+            document.getElementById('gsc-i-id1').style.position = 'relative';
+            document.getElementById('gsc-i-id1').style.top = '-3px';
+        }, 2000)
+    </script>
 </body>
 <div></div>
 

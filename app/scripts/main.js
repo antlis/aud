@@ -132,6 +132,10 @@ $(function() {
 });
 
 // Google search submit
+$('.gsc-search-button.gsc-search-button-v2').css({
+    'background': 'black'
+})
+
 
 $('.trending').hover(function() {
     $(this).css('left', '0');
