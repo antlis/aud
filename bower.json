@@ -7,7 +7,7 @@
     "masonry": "^4.1.1",
     "font-awesome": "^4.7.0",
     "animate-sass": "^0.6.6",
-    "slick": "*"
+    "slick-carousel": "^1.6.0"
   },
   "overrides": {
     "bootstrap-sass": {
