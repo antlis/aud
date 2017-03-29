@@ -9,6 +9,7 @@
       speed: 300,
       slidesToShow: 8,
       slidesToScroll: 1,
+      swipeToSlide: true,
       responsive: [
         {
           breakpoint: 1024,

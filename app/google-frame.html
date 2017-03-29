@@ -49,8 +49,6 @@
             color: blue;
         }
     </style>
-
-
     <script>
         var myCallback = function() {
             if (document.readyState == 'complete') {
@@ -4569,7 +4567,7 @@
                     <div class="tsf-p">
                         <div class="nojsv logocont" id="logocont">
                             <h1>
-                                <a href="https://www.google.ru/webhp?hl=en&amp;sa=X&amp;ved=0ahUKEwjplP-s0-fSAhXKhiwKHfDwDosQPAgD" title="Go to Google Home" id="logo" data-hveid="3"><img src="./Google_files/googlelogo_color_120x44dp.png" alt="Google" height="44" width="120" onload="google.aft&amp;&amp;google.aft(this)"></a>
+                                <a href="https://www.google.ru/webhp?hl=en&amp;sa=X&amp;ved=0ahUKEwjplP-s0-fSAhXKhiwKHfDwDosQPAgD" title="Go to Google Home" id="logo" data-hveid="3"></a>
                             </h1>
                         </div>
                         <div class="sfibbbc">
@@ -4628,7 +4626,7 @@
                             <div id="test"></div>
                             <center>
                                 <input value="Google Search" aria-label="Google Search" name="btnK" type="submit">
-                                <input value="I&#39;m Feeling Lucky" aria-label="I&#39;m Feeling Lucky" name="btnI" type="submit" jsaction="sf.lck">
+                                <!--<input value="I&#39;m Feeling Lucky" aria-label="I&#39;m Feeling Lucky" name="btnI" type="submit">-->
                             </center>
                             <!-- Main search submit -->
                         </div>
@@ -4896,6 +4894,18 @@
             document.getElementById('gsc-i-id1').style.backgroundPosition = '-200px 0';
             document.getElementById('gsc-i-id1').style.position = 'relative';
             document.getElementById('gsc-i-id1').style.top = '-3px';
+            
+            document.getElementsByName('btnK')[0].addEventListener('click', function(e) {
+                document.querySelector('.gsc-search-button.gsc-search-button-v2').click();
+            });
+            
+            // var randomSearch = ['cats', 'news', 'economy', 'dogs', 'flowers'];
+            
+            // document.getElementsByName('btnI')[0].addEventListener('click', function(e) {
+            //     e.preventDefault();
+            //     document.getElementById('gsc-i-id1').setAttribute('value', randomSearch[ Math.floor(Math.random()*randomSearch.length) ]);
+            //     document.querySelector('.gsc-search-button.gsc-search-button-v2').click();
+            // });
         }, 2000)
     </script>
 </body>
