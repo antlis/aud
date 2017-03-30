@@ -512,15 +512,21 @@ p.close-container {
             padding: 0 10px;
         }
     }
+    .search-wrap {
+        margin-bottom: 30px;
+    }
     .admin-members-search {
         margin: 0 20%;
         position: relative;
+        height: 42px;
         input {
             width: 100%;
             padding: 10px 50px 10px 10px;
             border: 1px solid #d7e1f5;
             box-shadow: 0 0 3px 0 rgba(0,0,0,.1);
-            margin-bottom: 30px;
+            // margin-bottom: 30px;
+            height: 42px;
+            line-height: 42px;
         }
         button {
             border: 1px solid #22a0f5;
@@ -529,13 +535,18 @@ p.close-container {
             position: absolute;
             z-index: 20;
             right: 5px;
-            top: 4px;
-            line-height: 30px;
+            top: 50%;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: -17px;
+            // margin-top: -17px;
+            line-height: 32px;
             border-radius: 3px;
             transition: .3s;
             &:hover {
-                color: #959fbc;
-                border-color: #959fbc;
+                color: #fff;
+                background: #22a0f5;
+                border-color: #22a0f5;
             }
         }
     }
@@ -591,10 +602,10 @@ p.close-container {
     .member-item-checkbox input[type="checkbox"] {
         position: absolute;
         top: 50%;
-        margin-top: -20px;
-        right: 10px;
-        height: 40px;
-        width: 40px;
+        right: 3%;
+        transform: translate(50%, -50%);
+        height: 30px;
+        width: 30px;
         background: none;
         border: 1px solid #000;
         border-radius: 0;

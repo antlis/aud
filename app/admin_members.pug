@@ -28,9 +28,10 @@ block content
         .admin-members
             
             // ---------- SEARCH ---------- 
-            form.admin-members-search(method="get", action="")
-                input(type="text", placeholder="Search for users Name/Email....", method="get")
-                button(type="submit") Search
+            .search-wrap
+                form.admin-members-search(method="get", action="")
+                    input(type="text", placeholder="Search for users Name/Email....", method="get")
+                    button(type="submit") Search
             // ---------- SEARCH ---------- 
             
             // ---------- DROPDOWNS ---------- 
