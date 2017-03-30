@@ -90,7 +90,7 @@ html {
     a {
         color: #fff;
         display: inline-block;
-        margin-right: 10px;
+        margin-right: 7px;
         font-size: 16px;
         line-height: .9;
     }
@@ -492,7 +492,6 @@ p.close-container {
             width: 100%;
             border: none;
             text-align: center;
-            box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
             a {
                 color: #8995b5;
                 padding: 10px 0;
@@ -559,9 +558,16 @@ p.close-container {
     } 
     .member-item {
         border-top: 2px solid #000;
-        padding: 20px 0 35px 0;
+        // padding: 10px 0 15px 0;
         text-align: center;
         position: relative;
+        margin-bottom: 15px;
+        transition: .3s;
+        box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: -2px 0 2px 0 rgba(0, 0, 0, 0.16), 2px 0 2px 0 rgba(0, 0, 0, 0.16), 0 2px 2px 0 rgba(0, 0, 0, 0.23);
+        }
         ul {
             list-style: none;
             margin: 0;
@@ -569,14 +575,24 @@ p.close-container {
             font-size: 18px;
         }
         li {
-            padding: 15px 0;
+            padding: 7px 0;
+            border-top: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            margin-right: 6%;
+            &:first-child {
+              border-top: none;
+            }
+            a {
+              color: #afbfe1;
+              font-size: 14px;
+            }
         }
     }
     .member-item-checkbox input[type="checkbox"] {
         position: absolute;
         top: 50%;
         margin-top: -20px;
-        right: 0;
+        right: 10px;
         height: 40px;
         width: 40px;
         background: none;
@@ -611,7 +627,12 @@ p.close-container {
     background: transparent !important;
 }
 
-.dropdown.open > .btn-default.dropdown-toggle {
+.dropdown.open {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.dropdown-menu {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
 .open .dropdown-menu {

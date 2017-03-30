@@ -107,6 +107,7 @@ gulp.task('serve', ['views', 'styles', 'scripts', 'fonts'], () => {
   browserSync({
     notify: false,
     port: 8080,
+    // tunnel: 'mindcast',
     server: {
       baseDir: ['.tmp', 'app'],
       routes: {
